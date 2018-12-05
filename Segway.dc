@@ -1,0 +1,55 @@
+#Front Corner Squad Segway Project Synthesis Script
+#NOTE: I just took all the parameters from the Synthesis Constraints slide
+
+#read in files
+#FIXME figure out which blocks to add
+read_file -format sverilog {./Segway.v ./Auth_blk.sv ./UART_rcv.sv ./piezo.sv ./SPI_mstr16.sv \
+./A2D_intf.sv ./ADC128S.sv ./SPI_ADC128S.sv ./inert_intf.sv ./inertial_integrator.sv \
+./balance_cntrl.sv ./mtr_drv.sv ./PMW11.sv ./rst_synch.sv}
+set current_design Segway.v
+
+#define clock (400MHz) and perform set_dont_touch_network on it
+create_clock -name "clk" -period 2.5 -waveform { 0 1 }  { clk }
+set_dont_touch_network [find port clk]
+
+#define input delays 0.25ns on all inputs but clk
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+set_input_delay -clock clk 0.25 $prim_inputs
+
+#set drive strength equivalent to 2-input nand of size 2 from TSCM
+#library (ND2D2BWP) for all inputs except clk and rst_n
+set prim_inputs_no_rst_n [remove_from_collection [all_inputs] [find port clk][find port rst_n]]
+set_driving_cell -lib_cell ND2D2BWP -from_pin A1-library\
+tcbn40lpbwptc $prim_inputs_no_rst_n
+
+#define output delays 0.5ns on all outputs
+set_output_delay -clock clk 0.5 [all_outputs]
+
+#define load on all outputs to be 0.1pf
+set_load 0.1 [all_outputs]
+
+#set max transition time on all nodes 0.10ns
+set_max_transition 0.1 [current_design]
+
+#employ TSMC32K_Lowk_Conservative wire load model
+set_wire_load_model -name TSMC32K_Lowk_Conservative -library tcbn40lpbwptc
+
+#set clock uncertainty to 0.15ns and force Synopsis to fix hold time problem
+set_clock_uncertainty 0.15 clk
+set_fix_hold clk
+
+#synthesize
+compile -map_effort medium
+check_design
+ungroup -all -flatten
+compile -map_effort high
+
+#produce min and max delay timing reports
+#report_timing -delay min
+#report_timing -delay max
+
+#produce area report
+report_area > Segway_area.txt
+
+#write out gate level verilog netlist
+write -format verilog Segway -output Segway.vg
