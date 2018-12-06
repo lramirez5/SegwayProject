@@ -11,7 +11,7 @@ reg clr_rx_rdy;
 
 UART_rcv RCV(.clk(clk), .rst_n(rst_n), .RX(RX), .clr_rdy(clr_rx_rdy), .rx_data(rx_data), .rdy(rx_rdy));
 
-enum {OFF, PWR1, PWR2} state, nxt_state;
+enum bit [1:0] {OFF, PWR1, PWR2} state, nxt_state;
 
 assign g = rx_rdy & (rx_data == 8'h67);
 assign s = rx_rdy & (rx_data == 8'h73);

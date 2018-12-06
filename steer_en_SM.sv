@@ -1,6 +1,8 @@
 module steer_en_SM(clk,rst_n,tmr_full,sum_gt_min,sum_lt_min,diff_gt_eigth,
                    diff_gt_15_16,clr_tmr,en_steer,rider_off);
 
+  parameter fast_sim = 1'b0;
+
   input clk;				// 50MHz clock
   input rst_n;				// Active low asynch reset
   input tmr_full;			// asserted when timer reaches 1.3 sec

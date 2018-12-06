@@ -1,10 +1,11 @@
-// Completed by George Akpan and Lorenzo Ramirez
+module balance_cntrl(clk, rst_n, vld, pwr_up, ptch, ld_cell_diff, rider_off, en_steer,
+		     lft_spd, lft_rev, rght_spd, rght_rev, too_fast);
 
-module balance_cntrl(clk,rst_n,vld,ptch,ld_cell_diff,lft_spd,lft_rev,
-                     rght_spd,rght_rev,rider_off, en_steer);
+  parameter fast_sim = 1'b0;
 								
-  input clk,rst_n;
+  input clk, rst_n;
   input vld;						// tells when a new valid inertial reading ready
+  input pwr_up;
   input signed [15:0] ptch;			// actual pitch measured
   input signed [11:0] ld_cell_diff;	// lft_ld - rght_ld from steer_en block
   input rider_off;					// High when weight on load cells indicates no rider
@@ -13,7 +14,8 @@ module balance_cntrl(clk,rst_n,vld,ptch,ld_cell_diff,lft_spd,lft_rev,
   output lft_rev;					// direction to run left motor (1==>reverse)
   output [10:0] rght_spd;			// 11-bit unsigned speed at which to run right motor
   output rght_rev;					// direction to run right motor (1==>reverse)
-  
+  output too_fast;
+
   ////////////////////////////////////
   // Define needed registers below //
   //////////////////////////////////
@@ -57,10 +59,10 @@ module balance_cntrl(clk,rst_n,vld,ptch,ld_cell_diff,lft_spd,lft_rev,
 
 	assign next_integrator = {{8{ptch_err_sat[9]}}, ptch_err_sat} + full_integrator;
 
-	assign ov = 	(ptch_err_sat[9] & full_integrator[17] & ~next_integrator[17]) |
-			(~ptch_err_sat[9] & ~full_integrator[17] & next_integrator[17]) ? 1'b1 : 1'b0;
+	assign ov = (ptch_err_sat[9] & full_integrator[17] & ~next_integrator[17]) |
+		    (~ptch_err_sat[9] & ~full_integrator[17] & next_integrator[17]) ? 1'b1 : 1'b0;
 
-	assign integrator = full_integrator[17:6];
+	assign integrator = (fast_sim != 0) ? full_integrator[17:2] : full_integrator[17:6];
 
 	always @(posedge clk, negedge rst_n)
 		if(!rst_n)
@@ -114,9 +116,16 @@ module balance_cntrl(clk,rst_n,vld,ptch,ld_cell_diff,lft_spd,lft_rev,
 	assign lft_speed_presat = lft_rev ? (~lft_shaped + 1) : lft_shaped;
 	assign rght_speed_presat = rght_rev ? (~rght_shaped + 1) : rght_shaped;
 
-	assign lft_spd = |lft_speed_presat[15:11] ? 11'h7FF : lft_speed_presat[10:0];
-	assign rght_spd = |rght_speed_presat[15:11] ? 11'h7FF : rght_speed_presat[10:0];
 
+	assign lft_spd = pwr_up ? 
+				|lft_speed_presat[15:11] ? 11'h7FF : lft_speed_presat[10:0]
+			 : 11'h0;
+
+	assign rght_spd = pwr_up ? 
+				|rght_speed_presat[15:11] ? 11'h7FF : rght_speed_presat[10:0]
+			  : 11'h0;
+
+	assign too_fast = (lft_spd > 11'h600) || (rght_spd > 11'h600);
 
 
 endmodule 
