@@ -13,13 +13,13 @@ PWM_piezo piezo_pwm(.clk(clk), .rst_n(rst_n), .max_cnt(max_cnt), .duty(duty), .P
 
 timer piezo_timer(.clk(clk), .rst_n(rst_n), .reset(~(en_steer | ovr_spd | batt_low)), .tmr(tmr));
 
-assign en_steer_max_cnt = 21'h01E838;//21'h1156EC;
+assign en_steer_max_cnt = 21'h01E838;
 assign ovr_spd_max_cnt = 21'h00E400;
-assign batt_low_max_cnt = 21'h03F800;//21'h030D40;
+assign batt_low_max_cnt = 21'h03F800;
 
 assign en_steer_en_duty = ~|tmr[3:1] && en_steer && !ovr_spd;
 assign ovr_spd_en_duty = ~tmr[0] && ovr_spd;
-assign batt_low_en_duty = tmr[3] && ~tmr[2]  && batt_low;//(tmr > 4'hA) && (tmr < 4'hE) && batt_low;
+assign batt_low_en_duty = tmr[3] && ~tmr[2]  && batt_low;
 
 assign max_cnt = (ovr_spd_en_duty) ? ovr_spd_max_cnt :
 		 (en_steer_en_duty) ? en_steer_max_cnt :
@@ -39,35 +39,27 @@ input clk, rst_n, reset;
 
 output reg [3:0] tmr;
 
-reg [25:0] cnt;
+reg [22:0] cnt;
 
 wire en;
 
-assign en = (cnt == 26'h0773594);//(cnt == 26'h3B9ACA0);
+assign en = (cnt == 23'h5f5e10);
 
 always @(posedge clk, negedge rst_n)
 	if(!rst_n) begin
-		cnt <= 26'b0;
+		cnt <= 23'b0;
 		tmr <= 4'b0;
 	end
 	else if(reset) begin
-		cnt <= 26'b0;
+		cnt <= 23'b0;
 		tmr <= 4'b0;
 	end
 	else if(en) begin
-		cnt <= 26'b0;
+		cnt <= 23'b0;
 		tmr <= tmr + 1;
 	end
 	else
 		cnt <= cnt + 1;
-/*
-always @(posedge clk, negedge rst_n)
-	if(!rst_n)
-		tmr <= 4'b0;
-	else if(reset)
-		tmr <= 
-	else if(en)
-		tmr <= tmr + 1;
-*/
+
 endmodule
 
