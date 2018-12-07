@@ -9,227 +9,218 @@ z2
 cModel Technology
 dC:/ProgramData/App-V/2191B702-5279-4048-91BA-BCF8F2A20B49/3C5B5D32-C303-48A2-8738-F357EDE80167/Root/examples
 vA2D_intf
-Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z1 !s110 1544129774
+Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z1 !s110 1544199749
 !i10b 1
-!s100 _Sz3oZQk=Wn8E=OKELK8e3
-INi5fY9Plz]C`aZ74WUf3F0
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 >ggm3_K^UONP@DLOoX9>I0
+IEA8Fim6l_dW@fhU?PAXUn0
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
 Z3 !s105 A2D_intf_sv_unit
 S1
-Z4 dC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject
-Z5 w1544129375
-Z6 8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf.sv
-Z7 FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf.sv
+Z4 dI:/GitHub/SegwayProject
+Z5 w1541782424
+Z6 8I:/GitHub/SegwayProject/A2D_intf.sv
+Z7 FI:/GitHub/SegwayProject/A2D_intf.sv
 L0 1
-Z8 OP;L;10.4a;61
+Z8 OE;L;10.3c;59
 r1
 !s85 0
 31
-Z9 !s108 1544129774.000000
-Z10 !s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf.sv|
-Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf.sv|
-!s101 -O0
-!i113 1
-Z12 o-work work -sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z9 !s108 1544199749.562000
+Z10 !s107 I:/GitHub/SegwayProject/A2D_intf.sv|
+Z11 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/A2D_intf.sv|
+!i113 0
+Z12 o-work work -sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 n@a2@d_intf
 vA2D_intf_tb
 R0
-R1
+Z13 !s110 1544199750
 !i10b 1
-!s100 9SXe^zlKjg>5]icPAdCeB2
-IKG23McOKM[AzO534>JFDA2
+!s100 >k[8Qd:zJ4dC^S5Mz]Kcd3
+I:;@7:N:bjXF<;T9i41JbM1
 R2
 !s105 A2D_intf_tb_sv_unit
 S1
 R4
-R5
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf_tb.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf_tb.sv
+w1542039255
+8I:/GitHub/SegwayProject/A2D_intf_tb.sv
+FI:/GitHub/SegwayProject/A2D_intf_tb.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/A2D_intf_tb.sv|
-!s101 -O0
-!i113 1
+!s108 1544199750.048000
+!s107 I:/GitHub/SegwayProject/A2D_intf_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/A2D_intf_tb.sv|
+!i113 0
 R12
 n@a2@d_intf_tb
 vADC128S
 R0
-R1
+!s110 1544201678
 !i10b 1
-!s100 lhE^bPB^IlkJ7fo<JUR8`0
-IAbf48l2=kKbMz96LLG[Y42
+!s100 0VoMn@R0[jZ^RMDNjAIBc0
+IhHPULGgHj`0<^2a2zSD390
 R2
 !s105 ADC128S_sv_unit
 S1
 R4
-R5
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/ADC128S.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/ADC128S.sv
+w1544201631
+8I:/GitHub/SegwayProject/ADC128S.sv
+FI:/GitHub/SegwayProject/ADC128S.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/ADC128S.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/ADC128S.sv|
-!s101 -O0
-!i113 1
+!s108 1544201678.474000
+!s107 I:/GitHub/SegwayProject/ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/ADC128S.sv|
+!i113 0
 R12
 n@a@d@c128@s
 vAuth_blk
 R0
-!s110 1544129931
+R13
 !i10b 1
-!s100 ]YbP]=Y7:WHk@^lJ3_g[C0
-I?n7_SUMUmBL@i5NSX=0IV3
+!s100 AL=cX]76]SLg]fbWo:ISi2
+I1Zohcd^M_9<eETVm=Q2Pj3
 R2
 !s105 Auth_blk_sv_unit
 S1
 R4
-w1544129930
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk.sv
+w1544156980
+8I:/GitHub/SegwayProject/Auth_blk.sv
+FI:/GitHub/SegwayProject/Auth_blk.sv
 L0 1
 R8
 r1
 !s85 0
 31
-!s108 1544129931.000000
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk.sv|
-!s101 -O0
-!i113 1
+!s108 1544199750.746000
+!s107 I:/GitHub/SegwayProject/Auth_blk.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/Auth_blk.sv|
+!i113 0
 R12
 n@auth_blk
 vAuth_blk_DE0
 R0
-R1
+Z14 !s110 1544199751
 !i10b 1
 !s100 OfLVBO9Gmgo4m?z3jVW<A1
-IkgeBQPnK<CIcL5W`JcTg_3
+I8`0^LT>PzABW5>@EQ4z8m1
 R2
 !s105 Auth_blk_DE0_sv_unit
 S1
 R4
-R5
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_DE0.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_DE0.sv
+w1541608237
+8I:/GitHub/SegwayProject/Auth_blk_DE0.sv
+FI:/GitHub/SegwayProject/Auth_blk_DE0.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_DE0.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_DE0.sv|
-!s101 -O0
-!i113 1
+!s108 1544199751.090000
+!s107 I:/GitHub/SegwayProject/Auth_blk_DE0.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/Auth_blk_DE0.sv|
+!i113 0
 R12
 n@auth_blk_@d@e0
 vAuth_blk_tb
 R0
-Z13 !s110 1544129775
+R14
 !i10b 1
-!s100 0ceK2Q[U:1lZ:WY[mDINC0
-I>n[7FZKH^9_^zGb5jON7l0
+!s100 o3793VB:Z^znK<Da0?FoX2
+IJT;E]8f[_DSVcJ@Ac01gK1
 R2
 !s105 Auth_blk_tb_sv_unit
 S1
 R4
-R5
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_tb.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_tb.sv
+w1541608043
+8I:/GitHub/SegwayProject/Auth_blk_tb.sv
+FI:/GitHub/SegwayProject/Auth_blk_tb.sv
 L0 1
 R8
 r1
 !s85 0
 31
-Z14 !s108 1544129775.000000
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Auth_blk_tb.sv|
-!s101 -O0
-!i113 1
+!s108 1544199751.484000
+!s107 I:/GitHub/SegwayProject/Auth_blk_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/Auth_blk_tb.sv|
+!i113 0
 R12
 n@auth_blk_tb
 vbalance_cntrl
 R0
-!s110 1544133559
+R14
 !i10b 1
-!s100 S`BP>JQmnfa;`ML6FViRB0
-I46V7F5hk=H8Chef5cDGRd2
+!s100 n]h71dJ[Hej]Ib9kQO_L13
+I>L3]KLR@=SCQTgJNB:AW:3
 R2
 !s105 balance_cntrl_sv_unit
 S1
 R4
-w1544133545
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl.sv
+Z15 w1544156981
+8I:/GitHub/SegwayProject/balance_cntrl.sv
+FI:/GitHub/SegwayProject/balance_cntrl.sv
 L0 1
 R8
 r1
 !s85 0
 31
-!s108 1544133558.000000
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl.sv|
-!s101 -O0
-!i113 1
+!s108 1544199751.884000
+!s107 I:/GitHub/SegwayProject/balance_cntrl.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/balance_cntrl.sv|
+!i113 0
 R12
 vbalance_cntrl_chk_tb
-R13
+Z16 !s110 1544199752
 !i10b 1
-!s100 De;gXYdzPJ]`>N0lk<[:K3
-IXIz_GiJNT:W61P3:C0cB20
+!s100 V1Wjaz?LVij@JFMgYbo;A2
+IOU;fAEOb31e`O_L25A7@H3
 R2
 R4
-Z15 w1544129376
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_chk_tb.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_chk_tb.v
+w1540823784
+8I:/GitHub/SegwayProject/balance_cntrl_chk_tb.v
+FI:/GitHub/SegwayProject/balance_cntrl_chk_tb.v
 L0 2
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_chk_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_chk_tb.v|
-!s101 -O0
-!i113 1
-Z16 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+!s108 1544199752.239000
+!s107 I:/GitHub/SegwayProject/balance_cntrl_chk_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/balance_cntrl_chk_tb.v|
+!i113 0
+Z17 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vbalance_cntrl_dbg_tb
-R13
+R16
 !i10b 1
-!s100 E419R3FJO4UcCTz[?iUae3
-ISF0kSg:^R__Vo69c:dDSg1
+!s100 `=hmP_;;:0zjKF8l6X0En0
+I1=<60ejzbVHKUSc5U3l?f2
 R2
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_dbg_tb.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_dbg_tb.v
+w1540661985
+8I:/GitHub/SegwayProject/balance_cntrl_dbg_tb.v
+FI:/GitHub/SegwayProject/balance_cntrl_dbg_tb.v
 L0 1
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_dbg_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/balance_cntrl_dbg_tb.v|
-!s101 -O0
-!i113 1
-R16
+!s108 1544199752.662000
+!s107 I:/GitHub/SegwayProject/balance_cntrl_dbg_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/balance_cntrl_dbg_tb.v|
+!i113 0
+R17
 vbatt_reg
 R0
 R1
 !i10b 1
 !s100 I@C6>1^2ZioUXdoNGJ4lA0
-IX1oW@H92<<ZX6SRof7@I:0
+IR<KXancR;>kXll3ATl>1]2
 R2
 R3
 S1
@@ -245,177 +236,169 @@ r1
 R9
 R10
 R11
-!s101 -O0
-!i113 1
+!i113 0
 R12
 vd_flipflop
 R0
-Z17 !s110 1544129776
+Z18 !s110 1544199758
 !i10b 1
 !s100 `n=B[:a`dYCNa`Lg>GO:z3
-I=X76R5j>nWng1_bg^fc][3
+IfgGSh=;b;e^]2oI:jlRaM2
 R2
-Z18 !s105 rst_synch_sv_unit
+Z19 !s105 rst_synch_sv_unit
 S1
 R4
-R15
-Z19 8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/rst_synch.sv
-Z20 FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/rst_synch.sv
+Z20 w1539181469
+Z21 8I:/GitHub/SegwayProject/rst_synch.sv
+Z22 FI:/GitHub/SegwayProject/rst_synch.sv
 L0 15
 R8
 r1
 !s85 0
 31
-Z21 !s108 1544129776.000000
-Z22 !s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/rst_synch.sv|
-Z23 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/rst_synch.sv|
-!s101 -O0
-!i113 1
+Z23 !s108 1544199757.924000
+Z24 !s107 I:/GitHub/SegwayProject/rst_synch.sv|
+Z25 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/rst_synch.sv|
+!i113 0
 R12
 vdff_pre
 R0
-R17
+Z26 !s110 1544199755
 !i10b 1
 !s100 _OLW8G><O]MCZ0:doF?Ug2
-IoUhg]_2K96UV[[O]UeGm40
+Ij98MAa<4:o1m]eEkX=LI;0
 R2
-Z24 !s105 PB_release_sv_unit
+Z27 !s105 PB_release_sv_unit
 S1
 R4
-R5
-Z25 8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PB_release.sv
-Z26 FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PB_release.sv
+Z28 w1539009086
+Z29 8I:/GitHub/SegwayProject/PB_release.sv
+Z30 FI:/GitHub/SegwayProject/PB_release.sv
 L0 17
 R8
 r1
 !s85 0
 31
-R21
-Z27 !s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PB_release.sv|
-Z28 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PB_release.sv|
-!s101 -O0
-!i113 1
+Z31 !s108 1544199755.202000
+Z32 !s107 I:/GitHub/SegwayProject/PB_release.sv|
+Z33 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PB_release.sv|
+!i113 0
 R12
 vduty
-R13
+Z34 !s110 1544199753
 !i10b 1
 !s100 8ciAJg`=dAYR4cSL_0Zmm2
-I`Uz?XGd0Gok9m:_0<;OzC3
+IL7XoU2QNB6iZ8@G;85F]i2
 R2
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty.v
+w1538145771
+8I:/GitHub/SegwayProject/duty.v
+FI:/GitHub/SegwayProject/duty.v
 L0 1
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty.v|
-!s101 -O0
-!i113 1
-R16
+!s108 1544199753.071000
+!s107 I:/GitHub/SegwayProject/duty.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/duty.v|
+!i113 0
+R17
 vduty_tb
-R13
+R34
 !i10b 1
-!s100 ]S26@NnE`f6RGTW>8f8lW0
-I7C83_L?iM=S[^=mL:eeY]2
+!s100 GNDHPE?zVhFTR1;YNS9A]0
+Ic<fk?BmkY^Z1UGCV2emW`2
 R2
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty_tb.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty_tb.v
+w1538145761
+8I:/GitHub/SegwayProject/duty_tb.v
+FI:/GitHub/SegwayProject/duty_tb.v
 L0 1
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/duty_tb.v|
-!s101 -O0
-!i113 1
-R16
+!s108 1544199753.467000
+!s107 I:/GitHub/SegwayProject/duty_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/duty_tb.v|
+!i113 0
+R17
 vinert_intf
 R0
-R13
+R34
 !i10b 1
-!s100 Scg5N6U7Ri?nXz3_?[3F50
-IE]nR3eijQ2FjO0U::0Cag0
+!s100 ::bVX;>[h@bG8bBi^]MEm3
+IVlhmd=K]>WEoYbCL9KF6i3
 R2
 !s105 inert_intf_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inert_intf.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inert_intf.sv
+w1543421865
+8I:/GitHub/SegwayProject/inert_intf.sv
+FI:/GitHub/SegwayProject/inert_intf.sv
 L0 2
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inert_intf.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inert_intf.sv|
-!s101 -O0
-!i113 1
+!s108 1544199753.831000
+!s107 I:/GitHub/SegwayProject/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/inert_intf.sv|
+!i113 0
 R12
 vinertial_integrator
 R0
-R13
+Z35 !s110 1544199754
 !i10b 1
 !s100 zhD@XnkeJYQlOWmnBI22P1
-Io<E1]`R]FO8W=]5>8eVTX2
+IzXHF4JP@_BNlW=9T9:lKN3
 R2
 !s105 inertial_integrator_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator.sv
+w1543597335
+8I:/GitHub/SegwayProject/inertial_integrator.sv
+FI:/GitHub/SegwayProject/inertial_integrator.sv
 L0 3
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator.sv|
-!s101 -O0
-!i113 1
+!s108 1544199754.202000
+!s107 I:/GitHub/SegwayProject/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/inertial_integrator.sv|
+!i113 0
 R12
 vinertial_integrator_tb
 R0
-R13
+R35
 !i10b 1
-!s100 DV;:z@Z@WL14Rl94a4hWc3
-IdU5]Y^U_>gJj=1hSXR4V62
+!s100 o_zM[ICECXaoCO[[C2fn83
+IQRNNE]UcEPkK0N`e@GhJD2
 R2
 !s105 inertial_integrator_tb_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator_tb.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator_tb.sv
+w1542386742
+8I:/GitHub/SegwayProject/inertial_integrator_tb.sv
+FI:/GitHub/SegwayProject/inertial_integrator_tb.sv
 L0 3
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/inertial_integrator_tb.sv|
-!s101 -O0
-!i113 1
+!s108 1544199754.563000
+!s107 I:/GitHub/SegwayProject/inertial_integrator_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/inertial_integrator_tb.sv|
+!i113 0
 R12
 vlft_ld_reg
 R0
 R1
 !i10b 1
 !s100 Zb4G4kOo]VoE0le2[D;l70
-IR<Q5PREl<n5g0KC=KDU3W2
+IBS7^:_0:1<ozj_m2IbXzZ3
 R2
 R3
 S1
@@ -431,111 +414,197 @@ r1
 R9
 R10
 R11
-!s101 -O0
-!i113 1
+!i113 0
 R12
 vmtr_drv
 R0
-R17
+R35
 !i10b 1
 !s100 3SImeF23Y>CIITWBKQ6@B0
-In1n>=I>ogZjQ]WK>hC`jO1
+IRIbT2W:EOG[IomW`VCVjn0
 R2
 !s105 mtr_drv_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/mtr_drv.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/mtr_drv.sv
+w1541557208
+8I:/GitHub/SegwayProject/mtr_drv.sv
+FI:/GitHub/SegwayProject/mtr_drv.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/mtr_drv.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/mtr_drv.sv|
-!s101 -O0
-!i113 1
+!s108 1544199754.867000
+!s107 I:/GitHub/SegwayProject/mtr_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/mtr_drv.sv|
+!i113 0
 R12
 vPB_release
 R0
-R17
+R26
 !i10b 1
 !s100 RCnF7DB>X2bG>oAhK2llz2
-I;zjnVY_Fi^lEi1TBXoSnO2
+I5SW8XY4?kzDScIBH@hW`?2
 R2
-R24
+R27
 S1
 R4
-R5
-R25
-R26
+R28
+R29
+R30
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-R27
-R28
-!s101 -O0
-!i113 1
+R31
+R32
+R33
+!i113 0
 R12
 n@p@b_release
-vPW11_tb
-R17
+vpiezo
+R0
+R26
 !i10b 1
-!s100 NV2IU;:hW7jhC`>eM370>2
-I:c0jBUzJJz[<kVQJ`Doo:0
+!s100 9f9=HKo[Z53FZQO^Whe8E1
+INbee66?2L?2;e=G]Q<[hA1
 R2
+Z36 !s105 piezo_sv_unit
+S1
 R4
-R5
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11_tb.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11_tb.v
+Z37 w1544198890
+Z38 8I:/GitHub/SegwayProject/piezo.sv
+Z39 FI:/GitHub/SegwayProject/piezo.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11_tb.v|
-!s101 -O0
-!i113 1
-R16
+Z40 !s108 1544199755.666000
+Z41 !s107 I:/GitHub/SegwayProject/piezo.sv|
+Z42 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/piezo.sv|
+!i113 0
+R12
+vpiezo_tb
+R0
+Z43 !s110 1544199756
+!i10b 1
+!s100 3g4W0D=QR:UMM8Ta=Cak[0
+I;zI<oOFP3UEaNK7DJ=9541
+R2
+!s105 piezo_tb_sv_unit
+S1
+R4
+w1544161347
+8I:/GitHub/SegwayProject/piezo_tb.sv
+FI:/GitHub/SegwayProject/piezo_tb.sv
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1544199756.081000
+!s107 I:/GitHub/SegwayProject/piezo_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/piezo_tb.sv|
+!i113 0
+R12
+vPiezoTest
+R43
+!i10b 1
+!s100 FnRd]QE==dF>4GS`Gke_Q1
+IDKo1mnYn=;i:ZUImgUHN51
+R2
+R4
+w1544027006
+8I:/GitHub/SegwayProject/PiezoTest.v
+FI:/GitHub/SegwayProject/PiezoTest.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1544199756.481000
+!s107 I:/GitHub/SegwayProject/PiezoTest.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/PiezoTest.v|
+!i113 0
+R17
+n@piezo@test
+vPW11_tb
+Z44 !s110 1544199757
+!i10b 1
+!s100 CE2M]VXb7HJ8gXh:@_R`z2
+IGl=ZQ1c_eR>Z7^LUABnCl2
+R2
+R4
+w1539009953
+8I:/GitHub/SegwayProject/PWM11_tb.v
+FI:/GitHub/SegwayProject/PWM11_tb.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1544199757.598000
+!s107 I:/GitHub/SegwayProject/PWM11_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/PWM11_tb.v|
+!i113 0
+R17
 n@p@w11_tb
 vPWM11
 R0
-R17
+R44
 !i10b 1
 !s100 AH]>>?P<C=b9IOVe1kbWe0
-IWMFk73TFnoHm43LMg1lm70
+IE3i_L8>AEH[VI1AGXGbP=0
 R2
-Z29 !s105 PWM11_sv_unit
+Z45 !s105 PWM11_sv_unit
 S1
 R4
-R5
-Z30 8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11.sv
-Z31 FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11.sv
+Z46 w1539181812
+Z47 8I:/GitHub/SegwayProject/PWM11.sv
+Z48 FI:/GitHub/SegwayProject/PWM11.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-Z32 !s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11.sv|
-Z33 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/PWM11.sv|
-!s101 -O0
-!i113 1
+Z49 !s108 1544199757.220000
+Z50 !s107 I:/GitHub/SegwayProject/PWM11.sv|
+Z51 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM11.sv|
+!i113 0
 R12
 n@p@w@m11
+vPWM_piezo
+R0
+R43
+!i10b 1
+!s100 ^kUfWIjCY2had>BW]:8dR2
+IjTQF;U^zXb0fWofDmGN`90
+R2
+!s105 PWM_piezo_sv_unit
+S1
+R4
+w1544161354
+8I:/GitHub/SegwayProject/PWM_piezo.sv
+FI:/GitHub/SegwayProject/PWM_piezo.sv
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1544199756.820000
+!s107 I:/GitHub/SegwayProject/PWM_piezo.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM_piezo.sv|
+!i113 0
+R12
+n@p@w@m_piezo
 vrght_ld_reg
 R0
 R1
 !i10b 1
 !s100 9083^?Leo7dL0_?YK12H72
-I_LfI;mFd9]k6C0B4X9CR>1
+Ib`XagX]=oQQn4c57A2VD[0
 R2
 R3
 S1
@@ -551,15 +620,14 @@ r1
 R9
 R10
 R11
-!s101 -O0
-!i113 1
+!i113 0
 R12
 vround_counter
 R0
 R1
 !i10b 1
 !s100 TaAS28bU0IjYY@UDi@B8k1
-IZkk7o=Wf?Fi>eVIkDiTY32
+Id=Af^IG:;L=;C52W^lMnY0
 R2
 R3
 S1
@@ -575,435 +643,439 @@ r1
 R9
 R10
 R11
-!s101 -O0
-!i113 1
+!i113 0
 R12
 vrst_synch
 R0
-R17
+R18
 !i10b 1
 !s100 zHEaE?aG^=kVD3CcDHUIi0
-Ik[l3gk@RCEWZ?kd@?50PS3
+Ii_3jLnjY5RCLVDMkbHkW20
 R2
-R18
+R19
 S1
 R4
-R15
-R19
 R20
+R21
+R22
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-R22
 R23
-!s101 -O0
-!i113 1
+R24
+R25
+!i113 0
 R12
 vsample_MISO
 R0
-Z34 !s110 1544129777
+Z52 !s110 1544199761
 !i10b 1
 !s100 HQLGT80NeKmWNdZW^^D`J2
-IECbRlDI5=N4nD?VQcoAgK3
+IS5<[z5cQcHj=1H6;Vh[:T3
 R2
-Z35 !s105 SPI_mstr16_sv_unit
+Z53 !s105 SPI_mstr16_sv_unit
 S1
 R4
-R15
-Z36 8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_mstr16.sv
-Z37 FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_mstr16.sv
+Z54 w1542039531
+Z55 8I:/GitHub/SegwayProject/SPI_mstr16.sv
+Z56 FI:/GitHub/SegwayProject/SPI_mstr16.sv
 L0 161
 R8
 r1
 !s85 0
 31
-Z38 !s108 1544129777.000000
-Z39 !s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_mstr16.sv|
-Z40 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_mstr16.sv|
-!s101 -O0
-!i113 1
+Z57 !s108 1544199760.945000
+Z58 !s107 I:/GitHub/SegwayProject/SPI_mstr16.sv|
+Z59 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/SPI_mstr16.sv|
+!i113 0
 R12
 nsample_@m@i@s@o
 vsaturate
-R17
+R18
 !i10b 1
 !s100 D56J3Y41IlJWKdD^J=T_`2
-I^[7i9LH=N[R22O[CH^25i0
+IoD[?blWT67F6B9nPRXzRl0
 R2
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate.v
+w1537799482
+8I:/GitHub/SegwayProject/saturate.v
+FI:/GitHub/SegwayProject/saturate.v
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate.v|
-!s101 -O0
-!i113 1
-R16
-vsaturate_tb
+!s108 1544199758.253000
+!s107 I:/GitHub/SegwayProject/saturate.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/saturate.v|
+!i113 0
 R17
+vsaturate_tb
+R18
 !i10b 1
-!s100 D4`U6UcUXK@zZoNS;L]6O1
-IRQTfhLAPQ:SLcb6SLzSOj3
+!s100 f6aze0KBYAU:jJ3<EhbQ_1
+I`AYzM=5XQJg@D7O_3?hKY1
 R2
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate_tb.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate_tb.v
+w1537800469
+8I:/GitHub/SegwayProject/saturate_tb.v
+FI:/GitHub/SegwayProject/saturate_tb.v
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/saturate_tb.v|
-!s101 -O0
-!i113 1
-R16
+!s108 1544199758.606000
+!s107 I:/GitHub/SegwayProject/saturate_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/saturate_tb.v|
+!i113 0
+R17
 vSegway
-!s110 1544138245
+Z60 !s110 1544199759
 !i10b 1
 !s100 ]LUkVBkE>VIV^Gng[nEln1
-ITdAdzoNB4MNOCclOnCzog0
+Il:ldL4A>PbLLXSCN?HXzV0
 R2
 R4
-w1544138244
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway.v
+R15
+8I:/GitHub/SegwayProject/Segway.v
+FI:/GitHub/SegwayProject/Segway.v
 L0 1
 R8
 r1
 !s85 0
 31
-!s108 1544138245.000000
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway.v|
-!s101 -O0
-!i113 1
-R16
+!s108 1544199758.958000
+!s107 I:/GitHub/SegwayProject/Segway.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/Segway.v|
+!i113 0
+R17
 n@segway
 vSegway_tb
 R0
-R17
+R60
 !i10b 1
-!s100 JQ<n`VUSk3Gh6iNzGSdEz3
-ImFV6dd<?LU[^jSKilOzRi0
+!s100 iB>7NP_gnOZa61kTSdD^10
+IUM8gX7DR6=h1IFnIe?RHA0
 R2
 !s105 Segway_tb_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway_tb.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway_tb.sv
+w1543854355
+8I:/GitHub/SegwayProject/Segway_tb.sv
+FI:/GitHub/SegwayProject/Segway_tb.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/Segway_tb.sv|
-!s101 -O0
-!i113 1
+!s108 1544199759.750000
+!s107 I:/GitHub/SegwayProject/Segway_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/Segway_tb.sv|
+!i113 0
 R12
 n@segway_tb
 vSegwayModel
 R0
-R34
+Z61 !s110 1544199760
 !i10b 1
-!s100 ^XPDXPPC?dhUYVaYWzWc:3
-I7@H`j7SY:kP:LJenV38Lb1
+!s100 ei=dNZh_UMg?oSMk2BkJ21
+IzTzhZBJ9P`fRf[4P5l@962
 R2
 !s105 SegwayModel_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SegwayModel.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SegwayModel.sv
+w1543421809
+8I:/GitHub/SegwayProject/SegwayModel.sv
+FI:/GitHub/SegwayProject/SegwayModel.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R21
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SegwayModel.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SegwayModel.sv|
-!s101 -O0
-!i113 1
+!s108 1544199760.094000
+!s107 I:/GitHub/SegwayProject/SegwayModel.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/SegwayModel.sv|
+!i113 0
 R12
 n@segway@model
 vSPI_ADC128S
 R0
-R34
+R61
 !i10b 1
-!s100 ;E62=i88@ghW83DU@9;CK1
-IMj=U?4=mz0=B<6a>8dB[53
+!s100 FMj[4W2=9oUfTJcKEmN2N0
+INlFoK>0eT[fl2;T^fN9Rh0
 R2
 !s105 SPI_ADC128S_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_ADC128S.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_ADC128S.sv
+w1541170222
+8I:/GitHub/SegwayProject/SPI_ADC128S.sv
+FI:/GitHub/SegwayProject/SPI_ADC128S.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R38
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_ADC128S.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/SPI_ADC128S.sv|
-!s101 -O0
-!i113 1
+!s108 1544199760.554000
+!s107 I:/GitHub/SegwayProject/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/SPI_ADC128S.sv|
+!i113 0
 R12
 n@s@p@i_@a@d@c128@s
 vspi_counter_4bit
 R0
-R34
+R52
 !i10b 1
 !s100 Rg6>?_I<X[J;3XzJGg;cl3
-ICX;L`Uc<TC:R9XZF>KU@H2
+I@5n;H7T>SUM4N@WV5;GGJ0
 R2
-R35
+R53
 S1
 R4
-R15
-R36
-R37
+R54
+R55
+R56
 L0 125
 R8
 r1
 !s85 0
 31
-R38
-R39
-R40
-!s101 -O0
-!i113 1
+R57
+R58
+R59
+!i113 0
 R12
 vspi_counter_5bit
 R0
-R34
+R52
 !i10b 1
 !s100 E^eEz0[3KD0E@Fi8]WSQR3
-IM=2E6n2NT0j`m?28<X0Ll3
+I]Sl>gVHjW:Z2WfGG3aS3G0
 R2
-R35
+R53
 S1
 R4
-R15
-R36
-R37
+R54
+R55
+R56
 L0 104
 R8
 r1
 !s85 0
 31
-R38
-R39
-R40
-!s101 -O0
-!i113 1
+R57
+R58
+R59
+!i113 0
 R12
 vSPI_mstr16
 R0
-R34
+R52
 !i10b 1
-!s100 fl4loWlY`i?7dn0RZ^o@U1
-IzHNm<SO7<;S8cOfUMOmKH1
+!s100 _?a9NFTFlSb1=M2P5N2@W3
+IoAhX7o=Szf`4RB5I5Rz]G1
 R2
-R35
+R53
 S1
 R4
-R15
-R36
-R37
+R54
+R55
+R56
 L0 1
 R8
 r1
 !s85 0
 31
-R38
-R39
-R40
-!s101 -O0
-!i113 1
+R57
+R58
+R59
+!i113 0
 R12
 n@s@p@i_mstr16
 vspi_shft_reg16
 R0
-R34
+R52
 !i10b 1
 !s100 582[Kd[b38jOU]JhS^_FC1
-IU2_6a=DbL^Jm0WhQ^InA33
+Io`GB_ldaL0LGG?okXeJPP2
 R2
-R35
+R53
 S1
 R4
-R15
-R36
-R37
+R54
+R55
+R56
 L0 140
 R8
 r1
 !s85 0
 31
-R38
-R39
-R40
-!s101 -O0
-!i113 1
+R57
+R58
+R59
+!i113 0
 R12
 vsr_ff
 R0
-R34
+R52
 !i10b 1
 !s100 cj3D<R@Xmb0aCfK1`YYKB0
-IRbh:nAk9bj904Kk>Z2dZ23
+I3gj[>867KVzg4iEgDN:bn2
 R2
-R35
+R53
 S1
 R4
-R15
-R36
-R37
+R54
+R55
+R56
 L0 174
 R8
 r1
 !s85 0
 31
-R38
-R39
-R40
-!s101 -O0
-!i113 1
+R57
+R58
+R59
+!i113 0
 R12
 vsr_flipflop
 R0
-R17
+R44
 !i10b 1
 !s100 6^4Fd<=l>mO<R3NF=^cTT2
-I`gLoBMS^mR5;1]^@2bN9g1
+IhzN;LgoL>P=;LVQ>caK^;3
 R2
-R29
+R45
 S1
 R4
-R5
-R30
-R31
+R46
+R47
+R48
 L0 27
 R8
 r1
 !s85 0
 31
-R21
-R32
-R33
-!s101 -O0
-!i113 1
+R49
+R50
+R51
+!i113 0
 R12
 vsteer_en_SM
 R0
-!s110 1544134928
+R52
 !i10b 1
-!s100 ASP>:jLo9DTZgJOEUAEQM2
-IQcPL71F?WJ__QUl?VYQ1=0
+!s100 i9Zbho5<gLSPZCeSYHO::0
+IieJBg0T;?B=JgNnPm8EQ`3
 R2
 !s105 steer_en_SM_sv_unit
 S1
 R4
-w1544134925
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/steer_en_SM.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/steer_en_SM.sv
+R15
+8I:/GitHub/SegwayProject/steer_en_SM.sv
+FI:/GitHub/SegwayProject/steer_en_SM.sv
 L0 1
 R8
 r1
 !s85 0
 31
-!s108 1544134927.000000
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/steer_en_SM.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/steer_en_SM.sv|
-!s101 -O0
-!i113 1
+!s108 1544199761.344000
+!s107 I:/GitHub/SegwayProject/steer_en_SM.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/steer_en_SM.sv|
+!i113 0
 R12
 nsteer_en_@s@m
+vtimer
+R0
+R26
+!i10b 1
+!s100 eDNS5Z]EWOj?ba[@A@Z8m0
+IPTR24zR45FSO1ljWNhO4H0
+R2
+R36
+S1
+R4
+R37
+R38
+R39
+L0 36
+R8
+r1
+!s85 0
+31
+R40
+R41
+R42
+!i113 0
+R12
 vUART_rcv
 R0
-R34
+R52
 !i10b 1
-!s100 ef8C@z5ghUzITC;1LR7>52
-I?1Vmf>4<n7_<DP@8jJN?L0
+!s100 fm8SXDFdlzgkcljSQ;ecU1
+I;nLTJlVn8X`8<XCHn@R6f2
 R2
 !s105 UART_rcv_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_rcv.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_rcv.sv
+w1541607663
+8I:/GitHub/SegwayProject/UART_rcv.sv
+FI:/GitHub/SegwayProject/UART_rcv.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R38
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_rcv.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_rcv.sv|
-!s101 -O0
-!i113 1
+!s108 1544199761.838000
+!s107 I:/GitHub/SegwayProject/UART_rcv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/UART_rcv.sv|
+!i113 0
 R12
 n@u@a@r@t_rcv
 vUART_tx
-R34
+!s110 1544199762
 !i10b 1
-!s100 OKXUO<?9:f=G`OAPBc]dP0
-I_MM[[=Mn:YZ?zMgVNX;Se0
+!s100 zeQn5;;m?MNn3OXo6Q5<60
+IGQzKN=3[YzQ:4eaT_MFa[2
 R2
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_tx.v
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_tx.v
+w1541607902
+8I:/GitHub/SegwayProject/UART_tx.v
+FI:/GitHub/SegwayProject/UART_tx.v
 L0 1
 R8
 r1
 !s85 0
 31
-R38
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_tx.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/UART_tx.v|
-!s101 -O0
-!i113 1
-R16
+!s108 1544199762.523000
+!s107 I:/GitHub/SegwayProject/UART_tx.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/UART_tx.v|
+!i113 0
+R17
 n@u@a@r@t_tx
 vup_dwn_clk4
 R0
 R1
 !i10b 1
 !s100 ]QIb9g1[;GV^OGF=b8I7d3
-I_N1:eVcdK2gHjN0o==Ghm1
+IJWb4aBc4IlAWog6j577n[0
 R2
 !s105 up_dwn_cnt4_sv_unit
 S1
 R4
-R15
-8C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/up_dwn_cnt4.sv
-FC:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/up_dwn_cnt4.sv
+w1539010729
+8I:/GitHub/SegwayProject/up_dwn_cnt4.sv
+FI:/GitHub/SegwayProject/up_dwn_cnt4.sv
 L0 1
 R8
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/up_dwn_cnt4.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/renzo/OneDrive/Documents/GitHub/SegwayProject/up_dwn_cnt4.sv|
-!s101 -O0
-!i113 1
+!s108 1544199748.633000
+!s107 I:/GitHub/SegwayProject/up_dwn_cnt4.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/up_dwn_cnt4.sv|
+!i113 0
 R12
