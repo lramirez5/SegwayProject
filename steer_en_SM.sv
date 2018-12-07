@@ -1,10 +1,12 @@
 //Lucas Wysiatko
-module steer_en_SM(clk,rst_n,tmr_full,lft_load,rght_load,clr_tmr,en_steer,rider_off);
+module steer_en_SM(clk,rst_n,tmr_full,lft_load,rght_load,fast_sim,clr_tmr,en_steer,rider_off);
 
   input clk;				// 50MHz clock
   input rst_n;				// Active low asynch reset
   input tmr_full;			// asserted when timer reaches 1.3 sec
-  input [11:0] lft_load, rght_load;              // come from A2D_intf used to calculate sum_gt_min, sum_lt_min, diff_gt_1_4, and diff_gt_15_16
+  input [11:0] lft_load, rght_load;     // come from A2D_intf used to calculate sum_gt_min, sum_lt_min, diff_gt_1_4, and diff_gt_15_16
+  //FIXME: this still needs to be implemented 
+  input fast_sim;			// don't wait for the entire timer when this is a 1
 
   /////////////////////////////////////////////////////////////////////////////
   // HEY BUDDY...you are a moron.  sum_gt_min would simply be ~sum_lt_min. Why
