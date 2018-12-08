@@ -18,6 +18,12 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
   
   wire [15:0] A2D_data,cmd;
   wire rdy_rise;
+
+  reg unsigned [11:0] lft_ld, rght_ld, batt;
+  reg lft_cnt_dir, rght_cnt_dir;
+
+  wire lft_rd_en, rght_rd_en, batt_rd_en;
+
 	
   typedef enum reg {FIRST,SECOND} state_t;
   
@@ -28,12 +34,12 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
   /////////////////////////////////////////////
   reg rdy_ff;				// used for edge detection on rdy
   reg [2:0] channel;		// pointer to last channel specified for A2D conversion to be performed on.
-  reg [11:0] value;
+ // reg [11:0] value, lft_value, rght_value, batt_value;
   
   /////////////////////////////////////////////
   // SM outputs declared as type logic next //
   ///////////////////////////////////////////
-  logic update_ch,dec_value;
+  logic update_ch,change_value;
 
   ////////////////////////////////
   // Instantiate SPI interface //
@@ -51,13 +57,37 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
 	  if ((channel!=3'b000) && (channel!=3'b100) && (channel!=3'b101))
 	    $display("WARNING: Only channels 0,4,5 of A2D valid for this version of ADC128S\n");
 	end
-	
+/*	
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
 	  value <= 12'hC00;
-	else if (dec_value)
-	  value <= value - 12'h010;
-	  
+	else if (change_value)
+	//  if(lft_rd_en)
+	//    value <= lft_value;//value - 12'h010;
+	//  else if(rght_rd_en)
+	//    value <= rght_value;
+	//  else if(batt_rd_en)
+	//    value <= batt_value;
+	  value <= value - 12'h010;*/
+/*
+  always_ff @(posedge clk, negedge rst_n)
+    if (!rst_n)
+	  lft_value <= 12'h000;
+	else if (change_value)// & ~lft_rd_en)
+	  lft_value <= lft_value + 12'h002;
+
+  always_ff @(posedge clk, negedge rst_n)
+    if (!rst_n)
+	  rght_value <= 12'h000;
+	else if (change_value)// & ~rght_rd_en)
+	  rght_value <= lft_value + 12'h005;
+
+  always_ff @(posedge clk, negedge rst_n)
+    if (!rst_n)
+	  batt_value <= 12'hFFF;
+	else if (change_value)// & ~batt_rd_en)
+	  batt_value <= batt_value - 12'h002;
+	  */
   //// Infer state register next ////
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
@@ -83,7 +113,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
       // Default outputs //
       ////////////////////
       update_ch = 0;
-	  dec_value = 0;
+	  change_value = 0;
       nxt_state = FIRST;	  
 
       case (state)
@@ -95,23 +125,66 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
         end
 		SECOND : begin		
 		  if (rdy_rise) begin
-		    dec_value = 1;
+		    change_value = 1;
 			nxt_state = FIRST;
 		  end else
 		    nxt_state = SECOND;
 		end
       endcase
     end
-	
-  assign A2D_data = {4'b0000,value} | {13'h0000,channel};
 
-  reg [15:0] lft_ld, rght_ld, batt;
+ 
+  assign lft_rd_en = (channel == 3'h0);
+  assign rght_rd_en = (channel == 3'h4);
+  assign batt_rd_en = (channel == 3'h5);
+	
+  assign A2D_data = 	(lft_rd_en) ? {4'b0000, lft_ld} :
+			(rght_rd_en) ? {4'b0000, rght_ld} :
+			(batt_rd_en) ? {4'b0000, batt} :
+			16'h0A01;
+			//{4'b0000,value};// | {13'h0000,channel};
+
 
   always @(posedge clk, negedge rst_n)
 	if(!rst_n)
-		batt <= 16'h7FF0;
-	else if(channel == 3'h5)
+		lft_cnt_dir <= 1;
+	else if((lft_cnt_dir & (lft_ld > 12'h200)) | (~lft_cnt_dir & (lft_ld < 12'h00a)))
+		lft_cnt_dir <= ~lft_cnt_dir;
+	
+  always @(posedge clk, negedge rst_n)
+	if(!rst_n)
+		lft_ld <= 12'h001;
+	else if(lft_rd_en & rdy_rise & (state == SECOND))
+	  if(lft_cnt_dir)
+		lft_ld <= lft_ld + 2;
+	  else
+		lft_ld <= lft_ld - 2;
+
+  
+  always @(posedge clk, negedge rst_n)
+	if(!rst_n)
+		rght_cnt_dir <= 1;
+	else if((rght_cnt_dir & (rght_ld > 12'h100)) | (~rght_cnt_dir & (rght_ld < 12'h00a)))
+		rght_cnt_dir <= ~rght_cnt_dir;
+	
+  always @(posedge clk, negedge rst_n)
+	if(!rst_n)
+		rght_ld <= 12'h030;
+	else if(rght_rd_en & rdy_rise & (state == SECOND))
+	  if(rght_cnt_dir)
+		rght_ld <= rght_ld + 5;
+	  else
+		rght_ld <= rght_ld - 5;
+
+
+  always @(posedge clk, negedge rst_n)
+	if(!rst_n)
+		batt <= 12'hFFF;
+	else if(batt_rd_en & rdy_rise & (state == SECOND))
+           if(batt > 16'h7FF)
 		batt <= batt - 2;
+	   else
+		batt <= {10'h000, ~batt[0]};
 
 
 endmodule  
