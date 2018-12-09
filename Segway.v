@@ -34,6 +34,8 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   
   ////////////////////////////////////
 
+  localparam BATT_THRESHOLD = 12'h800;
+
   wire [11:0] lft_ld, rght_ld, batt;
 
   wire pwr_up;
@@ -45,6 +47,9 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   wire lft_rev, rght_rev, too_fast;
 
   wire rider_off, en_steer, clr_tmr;
+
+  wire batt_low;
+  assign batt_low = batt < 12'h800;
    
   
   ///////////////////////////////////////////////////////
@@ -101,18 +106,18 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 			.PWM_frwrd_lft(PWM_frwrd_lft),
 			.PWM_frwrd_rght(PWM_frwrd_rght)
 		      );
-/*
+
   piezo piezo_DUT(	// Inputs
 			.clk(clk),
-			rst_n(rst_n),
+			.rst_n(rst_n),
 			.en_steer(en_steer),
 			.ovr_spd(too_fast),
-			.batt_low(),	// need to add this
+			.batt_low(batt_low),
 			// Outputs
 			.piezo(piezo),
 			.piezo_n(piezo_n)
 		  );
-*/
+
   inert_intf inert_intf_DUT(	// Inputs
 				.clk(clk),
 				.rst_n(rst_n),
@@ -148,13 +153,9 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 		steer_en_DUT(	// Inputs
 				.clk(clk),
 				.rst_n(rst_n),
-				.tmr_full(),	// need to add timer and calculate sum_ and diff_ signals
-				.sum_gt_min(),
-				.sum_lt_min(),
-				.diff_gt_eigth(),
-				.diff_gt_15_16(),
+				.lft_load(lft_ld),
+				.rght_load(rght_ld),
 				// Outputs
-				.clr_tmr(clr_tmr),
 				.en_steer(en_steer),
 				.rider_off(rider_off)
 			   );
