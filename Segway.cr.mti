@@ -227,6 +227,13 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	up_dwn_clk4
 
+} {} {}} I:/GitHub/SegwayProject/steer_en_SM_tb.v {1 {vlog -work work -vopt -stats=none I:/GitHub/SegwayProject/steer_en_SM_tb.v
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module steer_en_SM_tb
+
+Top level modules:
+	steer_en_SM_tb
+
 } {} {}} I:/GitHub/SegwayProject/saturate.v {1 {vlog -work work -vopt -stats=none I:/GitHub/SegwayProject/saturate.v
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 -- Compiling module saturate
