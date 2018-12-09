@@ -19,7 +19,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
   wire [15:0] A2D_data,cmd;
   wire rdy_rise;
 
-  reg unsigned [11:0] lft_ld, rght_ld, batt;
+  reg [11:0] lft_ld, rght_ld, batt;
   reg lft_cnt_dir, rght_cnt_dir;
 
   wire lft_rd_en, rght_rd_en, batt_rd_en;

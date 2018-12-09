@@ -16,7 +16,7 @@ initial begin
 
 	repeat (2) @(negedge clk);
 	rst_n = 1;
-repeat (1100) begin
+repeat (1000) begin
 	@(negedge clk) nxt = 1;
 	@(negedge clk) nxt = 0;
 
