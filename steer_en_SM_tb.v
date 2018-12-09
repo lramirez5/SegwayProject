@@ -31,7 +31,7 @@ module steer_en_SM_tb();
 	// First check no outputs occur when both differences are //
 	// less than, but sum_gt_min has not yet occurred.       //
 	//////////////////////////////////////////////////////////
-	repeat (2) begin
+	repeat (4) begin
 	  if (en_steer | ~rider_off) begin
 	    $display("ERROR: no outputs should occur until rider exceed min weight\n");
 		$stop();
@@ -56,7 +56,7 @@ module steer_en_SM_tb();
 	// Check no outputs occur when diff_gt_eigth is asserted.  //
 	// Also check that clr_tmr is asserted in this condition. //
 	///////////////////////////////////////////////////////////
-	repeat (3) begin
+	repeat (6) begin
 	  if (en_steer | rider_off) begin
 	    $display("ERROR: no outputs should occur until rider exceed min weight\n");
 		$stop();
@@ -73,7 +73,7 @@ module steer_en_SM_tb();
 	//////////////////////////////////////////////////////////
 	rght_ld = 12'h400;
 //	diff_gt_eigth = 0;
-	repeat (2) begin
+	repeat (4) begin
 	  if (en_steer | rider_off) begin
 	    $display("ERROR: no outputs should occur until timer expires\n");
 		$stop();
@@ -98,7 +98,7 @@ module steer_en_SM_tb();
 	rght_ld = 12'h200;
 //	diff_gt_eigth = 1;
 	@(negedge clk);
-	repeat (2) begin
+	repeat (4) begin
 	  if (!en_steer | rider_off) begin
 	    $display("ERROR: no outputs should change until diff_gt_15_16\n");
 		$stop();
@@ -150,7 +150,7 @@ module steer_en_SM_tb();
 	rght_ld = 12'h000;
 //	diff_gt_15_16 = 0;
 //	diff_gt_eigth = 0;
-	repeat (2) begin
+	repeat (4) begin
 	  if (en_steer | ~rider_off) begin
 	    $display("ERROR: only rider_off output should occur until rider exceed min weight\n");
 		$stop();
@@ -175,7 +175,7 @@ module steer_en_SM_tb();
 	// Check no outputs occur when diff_gt_eigth is asserted.  //
 	// Also check that clr_tmr is asserted in this condition. //
 	///////////////////////////////////////////////////////////
-	repeat (3) begin
+	repeat (6) begin
 	  if (en_steer | rider_off) begin
 	    $display("ERROR: no outputs should occur until rider exceed min weight\n");
 		$stop();
@@ -192,7 +192,7 @@ module steer_en_SM_tb();
 	//////////////////////////////////////////////////////////
 	lft_ld = 12'h280;
 //	diff_gt_eigth = 0;
-	repeat (2) begin
+	repeat (4) begin
 	  if (en_steer | rider_off) begin
 	    $display("ERROR: no outputs should occur until timer expires\n");
 		$stop();
@@ -203,19 +203,21 @@ module steer_en_SM_tb();
 	/////////////////////////////////////////////////////////////////////////////
 	// When tmr_full becomes true en_steer should become true one clock later //
 	///////////////////////////////////////////////////////////////////////////	
+	@(iDUT.tmr_full);
 	@(negedge clk);
 	if (!en_steer) begin
 	  $display("ERROR: en_steer should be set now\n");
 	  $stop();
 	end	
-
+	@(negedge clk);
 	//////////////////////////////////////////////////////////////	
     // Nothing should happend until diff_gt_15_16 becomes true //
     ////////////////////////////////////////////////////////////
-	lft_ld = 12'h006;
+	lft_ld = 12'h120;
 //	diff_gt_eigth = 1;
 	@(negedge clk);
-	repeat (2) begin
+
+	repeat (4) begin
 	  if (!en_steer | rider_off) begin
 	    $display("ERROR: no outputs should change until diff_gt_15_16\n");
 		$stop();
@@ -223,7 +225,7 @@ module steer_en_SM_tb();
 	  @(negedge clk);
 	end	
 
-	rght_ld = 12'h004;
+	rght_ld = 12'h040;
 //	sum_gt_min = 0;
 //    sum_lt_min = 1;
     @(negedge clk);
