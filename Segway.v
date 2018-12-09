@@ -50,6 +50,8 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 
   wire batt_low;
   assign batt_low = batt < 12'h800;
+
+  wire [11:0] load_cell_diff;
    
   
   ///////////////////////////////////////////////////////
@@ -122,13 +124,13 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 				.clk(clk),
 				.rst_n(rst_n),
 				.INT(INT),
+				.MISO(INERT_MISO),
 				// Outputs
 				.vld(vld),
 				.ptch(ptch),
 				.SS_n(INERT_SS_n),
 				.SCLK(INERT_SCLK),
-				.MOSI(INERT_MOSI),
-				.MISO(INERT_MISO)
+				.MOSI(INERT_MOSI)
 			    );
 
   balance_cntrl #(fast_sim)
@@ -138,7 +140,7 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 				.pwr_up(pwr_up),
 				.vld(vld),
 				.ptch(ptch),
-				.ld_cell_diff(),	// need to calculate load difference
+				.ld_cell_diff(load_cell_diff),	// need to calculate load difference
 				.rider_off(rider_off),
 				.en_steer(en_steer),
 				// Outputs
@@ -157,12 +159,13 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 				.rght_load(rght_ld),
 				// Outputs
 				.en_steer(en_steer),
-				.rider_off(rider_off)
+				.rider_off(rider_off),
+				.load_cell_diff(load_cell_diff)
 			   );
 
   /////////////////////////////////////
   // Instantiate reset synchronizer //
   ///////////////////////////////////  
-  reset_synch iRST(.clk(clk), .RST_n(RST_n), .rst_n(rst_n));
+  rst_synch iRST(.clk(clk), .RST_n(RST_n), .rst_n(rst_n));
   
 endmodule

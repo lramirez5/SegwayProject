@@ -37,9 +37,10 @@ SegwayModel iPHYS(.clk(clk),.RST_n(RST_n),.SS_n(SS_n),.SCLK(SCLK),
   to read ld_cell_lft, ld_cell_rght and battery
 */  
 ADC128S iA2D(.clk(clk),.rst_n(RST_n),//.ld_cell_lft(ld_cell_lft),.ld_cell_rght(ld_cell_rght),//inputs
-			.SS_n(SS_A2D_n),.SCLK(SCLK_A2D_n),
-			.MOSI(MOSI_A2D_n),//inputs
-			.MISO(MISO_A2D_n));
+			.SS_n(A2D_SS_n),.SCLK(A2D_SCLK),
+			.MOSI(A2D_MOSI),//inputs
+			.MISO(A2D_MISO));
+
   
 ////// Instantiate DUT ////////
 Segway iDUT(.clk(clk),.RST_n(RST_n),.LED(),.INERT_SS_n(SS_n),.INERT_MOSI(MOSI),
@@ -74,19 +75,20 @@ initial begin
 
 
   
-  //repeat(50000) @(posedge clk);
+  repeat(50000) @(posedge clk);
   
   //SendCmd(8'h67);	// perhaps you have a task that sends 'g' TODO
   cmd = 8'h67;
   send_cmd = 1'b1;
-  rider_lean = 14'b0;
+  rider_lean = 14'h1FFF;
   
   //ewpwRCRO
-  repeat(1000000)
-  
-    @(posedge clk);
-    rider_lean = 14'h3FF;
-     
+  repeat(1000000) @(negedge clk);
+
+  rider_lean = 14'h0000;
+	
+  repeat(1000000) @(negedge clk);
+     $stop;
     repeat(1000000)
     @(posedge clk);
     rider_lean = 14'h001;
@@ -103,7 +105,7 @@ initial begin
 end
 
 always
-  #5 clk = ~clk;
+  #10 clk = ~clk;
 
 //`include "tb_tasks.v"	// perhaps you have a separate included file that has handy tasks.
 

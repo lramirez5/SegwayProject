@@ -79,11 +79,13 @@ R11
 n@a@d@c128@s
 vAuth_blk
 R0
-!s110 1544199750
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 AL=cX]76]SLg]fbWo:ISi2
 I1Zohcd^M_9<eETVm=Q2Pj3
-R1
 !s105 Auth_blk_sv_unit
 S1
 R3
@@ -92,9 +94,6 @@ w1544156980
 FI:/GitHub/SegwayProject/Auth_blk.sv
 L0 1
 R7
-r1
-!s85 0
-31
 !s108 1544199750.746000
 !s107 I:/GitHub/SegwayProject/Auth_blk.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/Auth_blk.sv|
@@ -151,29 +150,28 @@ R11
 n@auth_blk_tb
 vbalance_cntrl
 R0
-R12
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 n]h71dJ[Hej]Ib9kQO_L13
 I>L3]KLR@=SCQTgJNB:AW:3
-R1
 !s105 balance_cntrl_sv_unit
 S1
 R3
-Z13 w1544156981
+w1544156981
 8I:/GitHub/SegwayProject/balance_cntrl.sv
 FI:/GitHub/SegwayProject/balance_cntrl.sv
 L0 1
 R7
-r1
-!s85 0
-31
 !s108 1544199751.884000
 !s107 I:/GitHub/SegwayProject/balance_cntrl.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/balance_cntrl.sv|
 !i113 0
 R11
 vbalance_cntrl_chk_tb
-Z14 !s110 1544199752
+Z13 !s110 1544199752
 !i10b 1
 !s100 V1Wjaz?LVij@JFMgYbo;A2
 IOU;fAEOb31e`O_L25A7@H3
@@ -191,9 +189,9 @@ r1
 !s107 I:/GitHub/SegwayProject/balance_cntrl_chk_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/balance_cntrl_chk_tb.v|
 !i113 0
-Z15 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vbalance_cntrl_dbg_tb
-R14
+R13
 !i10b 1
 !s100 `=hmP_;;:0zjKF8l6X0En0
 I1=<60ejzbVHKUSc5U3l?f2
@@ -211,7 +209,7 @@ r1
 !s107 I:/GitHub/SegwayProject/balance_cntrl_dbg_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/balance_cntrl_dbg_tb.v|
 !i113 0
-R15
+R14
 vbatt_reg
 R0
 R1
@@ -236,52 +234,51 @@ R10
 R11
 vd_flipflop
 R0
-Z16 !s110 1544199758
-!i10b 1
-!s100 `n=B[:a`dYCNa`Lg>GO:z3
-IfgGSh=;b;e^]2oI:jlRaM2
 R1
-Z17 !s105 rst_synch_sv_unit
-S1
-R3
-Z18 w1539181469
-Z19 8I:/GitHub/SegwayProject/rst_synch.sv
-Z20 FI:/GitHub/SegwayProject/rst_synch.sv
-L0 15
-R7
 r1
 !s85 0
 31
-Z21 !s108 1544199757.924000
-Z22 !s107 I:/GitHub/SegwayProject/rst_synch.sv|
-Z23 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/rst_synch.sv|
+!i10b 1
+!s100 `n=B[:a`dYCNa`Lg>GO:z3
+IfgGSh=;b;e^]2oI:jlRaM2
+Z15 !s105 rst_synch_sv_unit
+S1
+R3
+Z16 w1539181469
+Z17 8I:/GitHub/SegwayProject/rst_synch.sv
+Z18 FI:/GitHub/SegwayProject/rst_synch.sv
+L0 15
+R7
+Z19 !s108 1544199757.924000
+Z20 !s107 I:/GitHub/SegwayProject/rst_synch.sv|
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/rst_synch.sv|
 !i113 0
 R11
 vdff_pre
 R0
-Z24 !s110 1544199755
+Z22 !s110 1544199755
 !i10b 1
 !s100 _OLW8G><O]MCZ0:doF?Ug2
 Ij98MAa<4:o1m]eEkX=LI;0
 R1
-Z25 !s105 PB_release_sv_unit
+Z23 !s105 PB_release_sv_unit
 S1
 R3
-Z26 w1539009086
-Z27 8I:/GitHub/SegwayProject/PB_release.sv
-Z28 FI:/GitHub/SegwayProject/PB_release.sv
+Z24 w1539009086
+Z25 8I:/GitHub/SegwayProject/PB_release.sv
+Z26 FI:/GitHub/SegwayProject/PB_release.sv
 L0 17
 R7
 r1
 !s85 0
 31
-Z29 !s108 1544199755.202000
-Z30 !s107 I:/GitHub/SegwayProject/PB_release.sv|
-Z31 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PB_release.sv|
+Z27 !s108 1544199755.202000
+Z28 !s107 I:/GitHub/SegwayProject/PB_release.sv|
+Z29 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PB_release.sv|
 !i113 0
 R11
 vduty
-Z32 !s110 1544199753
+Z30 !s110 1544199753
 !i10b 1
 !s100 8ciAJg`=dAYR4cSL_0Zmm2
 IL7XoU2QNB6iZ8@G;85F]i2
@@ -299,9 +296,9 @@ r1
 !s107 I:/GitHub/SegwayProject/duty.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/duty.v|
 !i113 0
-R15
+R14
 vduty_tb
-R32
+R30
 !i10b 1
 !s100 GNDHPE?zVhFTR1;YNS9A]0
 Ic<fk?BmkY^Z1UGCV2emW`2
@@ -319,37 +316,61 @@ r1
 !s107 I:/GitHub/SegwayProject/duty_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/duty_tb.v|
 !i113 0
-R15
+R14
 vinert_intf
 R0
-R32
-!i10b 1
-!s100 ::bVX;>[h@bG8bBi^]MEm3
-IVlhmd=K]>WEoYbCL9KF6i3
 R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 PSX0BBa3RXa@G6B>`YGe?0
+IWEcIYJVS>X<?3_T?EY[>I0
 !s105 inert_intf_sv_unit
 S1
 R3
-w1543421865
+w1544393871
 8I:/GitHub/SegwayProject/inert_intf.sv
 FI:/GitHub/SegwayProject/inert_intf.sv
 L0 2
 R7
-r1
-!s85 0
-31
-!s108 1544199753.831000
+!s108 1544393873.805000
 !s107 I:/GitHub/SegwayProject/inert_intf.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/inert_intf.sv|
 !i113 0
 R11
+vinert_intf_tb
+R0
+!s110 1544396226
+!i10b 1
+!s100 ji]bY164oDmkG7^idK[7i2
+IU@TXES<:SOA=>Y]9J7KMH2
+R1
+!s105 inert_intf_tb_sv_unit
+S1
+R3
+w1543597267
+8I:/GitHub/SegwayProject/inert_intf_tb.sv
+FI:/GitHub/SegwayProject/inert_intf_tb.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1544396226.362000
+!s107 I:/GitHub/SegwayProject/inert_intf_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/inert_intf_tb.sv|
+!i113 0
+R11
 vinertial_integrator
 R0
-Z33 !s110 1544199754
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 zhD@XnkeJYQlOWmnBI22P1
 IzXHF4JP@_BNlW=9T9:lKN3
-R1
 !s105 inertial_integrator_sv_unit
 S1
 R3
@@ -358,9 +379,6 @@ w1543597335
 FI:/GitHub/SegwayProject/inertial_integrator.sv
 L0 3
 R7
-r1
-!s85 0
-31
 !s108 1544199754.202000
 !s107 I:/GitHub/SegwayProject/inertial_integrator.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/inertial_integrator.sv|
@@ -368,7 +386,7 @@ r1
 R11
 vinertial_integrator_tb
 R0
-R33
+!s110 1544199754
 !i10b 1
 !s100 o_zM[ICECXaoCO[[C2fn83
 IQRNNE]UcEPkK0N`e@GhJD2
@@ -413,11 +431,13 @@ R10
 R11
 vmtr_drv
 R0
-R33
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 3SImeF23Y>CIITWBKQ6@B0
 IRIbT2W:EOG[IomW`VCVjn0
-R1
 !s105 mtr_drv_sv_unit
 S1
 R3
@@ -426,9 +446,6 @@ w1541557208
 FI:/GitHub/SegwayProject/mtr_drv.sv
 L0 1
 R7
-r1
-!s85 0
-31
 !s108 1544199754.867000
 !s107 I:/GitHub/SegwayProject/mtr_drv.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/mtr_drv.sv|
@@ -436,54 +453,53 @@ r1
 R11
 vPB_release
 R0
-R24
+R22
 !i10b 1
 !s100 RCnF7DB>X2bG>oAhK2llz2
 I5SW8XY4?kzDScIBH@hW`?2
 R1
-R25
+R23
 S1
 R3
+R24
+R25
 R26
-R27
-R28
 L0 1
 R7
 r1
 !s85 0
 31
+R27
+R28
 R29
-R30
-R31
 !i113 0
 R11
 n@p@b_release
 vpiezo
 R0
-R24
-!i10b 1
-!s100 9f9=HKo[Z53FZQO^Whe8E1
-INbee66?2L?2;e=G]Q<[hA1
 R1
-!s105 piezo_sv_unit
-S1
-R3
-w1544198890
-8I:/GitHub/SegwayProject/piezo.sv
-FI:/GitHub/SegwayProject/piezo.sv
-L0 1
-R7
 r1
 !s85 0
 31
-!s108 1544199755.666000
-!s107 I:/GitHub/SegwayProject/piezo.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/piezo.sv|
+!i10b 1
+!s100 a<_fD83Log]bdU?d[VGj83
+I<YlemCWh<CL==@dJ;5K4K1
+Z31 !s105 piezo_sv_unit
+S1
+R3
+Z32 w1544393751
+Z33 8I:/GitHub/SegwayProject/piezo.sv
+Z34 FI:/GitHub/SegwayProject/piezo.sv
+L0 1
+R7
+Z35 !s108 1544393753.669000
+Z36 !s107 I:/GitHub/SegwayProject/piezo.sv|
+Z37 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/piezo.sv|
 !i113 0
 R11
 vpiezo_tb
 R0
-Z34 !s110 1544199756
+Z38 !s110 1544199756
 !i10b 1
 !s100 3g4W0D=QR:UMM8Ta=Cak[0
 I;zI<oOFP3UEaNK7DJ=9541
@@ -504,8 +520,31 @@ r1
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/piezo_tb.sv|
 !i113 0
 R11
-vPiezoTest
+vPiezo_Timer
+R0
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 b4?U[9NzmoiKKBSMYjC`j3
+I3g?5;M``>_IPji?cm8MkG3
+R31
+S1
+R3
+R32
+R33
 R34
+L0 36
+R7
+R35
+R36
+R37
+!i113 0
+R11
+n@piezo_@timer
+vPiezoTest
+R38
 !i10b 1
 !s100 FnRd]QE==dF>4GS`Gke_Q1
 IDKo1mnYn=;i:ZUImgUHN51
@@ -523,10 +562,10 @@ r1
 !s107 I:/GitHub/SegwayProject/PiezoTest.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/PiezoTest.v|
 !i113 0
-R15
+R14
 n@piezo@test
 vPW11_tb
-Z35 !s110 1544199757
+!s110 1544199757
 !i10b 1
 !s100 CE2M]VXb7HJ8gXh:@_R`z2
 IGl=ZQ1c_eR>Z7^LUABnCl2
@@ -544,39 +583,40 @@ r1
 !s107 I:/GitHub/SegwayProject/PWM11_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/PWM11_tb.v|
 !i113 0
-R15
+R14
 n@p@w11_tb
 vPWM11
 R0
-R35
-!i10b 1
-!s100 AH]>>?P<C=b9IOVe1kbWe0
-IE3i_L8>AEH[VI1AGXGbP=0
 R1
-Z36 !s105 PWM11_sv_unit
-S1
-R3
-Z37 w1539181812
-Z38 8I:/GitHub/SegwayProject/PWM11.sv
-Z39 FI:/GitHub/SegwayProject/PWM11.sv
-L0 1
-R7
 r1
 !s85 0
 31
-Z40 !s108 1544199757.220000
-Z41 !s107 I:/GitHub/SegwayProject/PWM11.sv|
-Z42 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM11.sv|
+!i10b 1
+!s100 AH]>>?P<C=b9IOVe1kbWe0
+IE3i_L8>AEH[VI1AGXGbP=0
+Z39 !s105 PWM11_sv_unit
+S1
+R3
+Z40 w1539181812
+Z41 8I:/GitHub/SegwayProject/PWM11.sv
+Z42 FI:/GitHub/SegwayProject/PWM11.sv
+L0 1
+R7
+Z43 !s108 1544199757.220000
+Z44 !s107 I:/GitHub/SegwayProject/PWM11.sv|
+Z45 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM11.sv|
 !i113 0
 R11
 n@p@w@m11
 vPWM_piezo
 R0
-R34
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 ^kUfWIjCY2had>BW]:8dR2
 IjTQF;U^zXb0fWofDmGN`90
-R1
 !s105 PWM_piezo_sv_unit
 S1
 R3
@@ -585,9 +625,6 @@ w1544161354
 FI:/GitHub/SegwayProject/PWM_piezo.sv
 L0 1
 R7
-r1
-!s85 0
-31
 !s108 1544199756.820000
 !s107 I:/GitHub/SegwayProject/PWM_piezo.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM_piezo.sv|
@@ -640,25 +677,24 @@ R10
 R11
 vrst_synch
 R0
-R16
-!i10b 1
-!s100 zHEaE?aG^=kVD3CcDHUIi0
-Ii_3jLnjY5RCLVDMkbHkW20
 R1
-R17
-S1
-R3
-R18
-R19
-R20
-L0 1
-R7
 r1
 !s85 0
 31
+!i10b 1
+!s100 zHEaE?aG^=kVD3CcDHUIi0
+Ii_3jLnjY5RCLVDMkbHkW20
+R15
+S1
+R3
+R16
+R17
+R18
+L0 1
+R7
+R19
+R20
 R21
-R22
-R23
 !i113 0
 R11
 vsample_MISO
@@ -670,22 +706,22 @@ r1
 !i10b 1
 !s100 HQLGT80NeKmWNdZW^^D`J2
 IS5<[z5cQcHj=1H6;Vh[:T3
-Z43 !s105 SPI_mstr16_sv_unit
+Z46 !s105 SPI_mstr16_sv_unit
 S1
 R3
-Z44 w1542039531
-Z45 8I:/GitHub/SegwayProject/SPI_mstr16.sv
-Z46 FI:/GitHub/SegwayProject/SPI_mstr16.sv
+Z47 w1542039531
+Z48 8I:/GitHub/SegwayProject/SPI_mstr16.sv
+Z49 FI:/GitHub/SegwayProject/SPI_mstr16.sv
 L0 161
 R7
-Z47 !s108 1544199760.945000
-Z48 !s107 I:/GitHub/SegwayProject/SPI_mstr16.sv|
-Z49 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/SPI_mstr16.sv|
+Z50 !s108 1544199760.945000
+Z51 !s107 I:/GitHub/SegwayProject/SPI_mstr16.sv|
+Z52 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/SPI_mstr16.sv|
 !i113 0
 R11
 nsample_@m@i@s@o
 vsaturate
-R16
+Z53 !s110 1544199758
 !i10b 1
 !s100 D56J3Y41IlJWKdD^J=T_`2
 IoD[?blWT67F6B9nPRXzRl0
@@ -703,9 +739,9 @@ r1
 !s107 I:/GitHub/SegwayProject/saturate.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/saturate.v|
 !i113 0
-R15
+R14
 vsaturate_tb
-R16
+R53
 !i10b 1
 !s100 f6aze0KBYAU:jJ3<EhbQ_1
 I`AYzM=5XQJg@D7O_3?hKY1
@@ -723,15 +759,15 @@ r1
 !s107 I:/GitHub/SegwayProject/saturate_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/saturate_tb.v|
 !i113 0
-R15
+R14
 vSegway
-Z50 !s110 1544199759
+!s110 1544396225
 !i10b 1
-!s100 ]LUkVBkE>VIV^Gng[nEln1
-Il:ldL4A>PbLLXSCN?HXzV0
+!s100 H7NAVOZ=>l?;XDcofJZ4l1
+IEWTMUWSNYYzXI;eSabhWP0
 R1
 R3
-R13
+w1544395754
 8I:/GitHub/SegwayProject/Segway.v
 FI:/GitHub/SegwayProject/Segway.v
 L0 1
@@ -739,23 +775,23 @@ R7
 r1
 !s85 0
 31
-!s108 1544199758.958000
+!s108 1544396225.369000
 !s107 I:/GitHub/SegwayProject/Segway.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/Segway.v|
 !i113 0
-R15
+R14
 n@segway
 vSegway_tb
 R0
-R50
+!s110 1544396459
 !i10b 1
-!s100 iB>7NP_gnOZa61kTSdD^10
-IUM8gX7DR6=h1IFnIe?RHA0
+!s100 RbEoO@L=FZRk_aS5gzJ1E2
+Ik0[;8a>fhPiDCSk?[mJ;A1
 R1
 !s105 Segway_tb_sv_unit
 S1
 R3
-w1543854355
+w1544396457
 8I:/GitHub/SegwayProject/Segway_tb.sv
 FI:/GitHub/SegwayProject/Segway_tb.sv
 L0 1
@@ -763,7 +799,7 @@ R7
 r1
 !s85 0
 31
-!s108 1544199759.750000
+!s108 1544396459.516000
 !s107 I:/GitHub/SegwayProject/Segway_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/Segway_tb.sv|
 !i113 0
@@ -771,11 +807,13 @@ R11
 n@segway_tb
 vSegwayModel
 R0
-!s110 1544199760
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 ei=dNZh_UMg?oSMk2BkJ21
 IzTzhZBJ9P`fRf[4P5l@962
-R1
 !s105 SegwayModel_sv_unit
 S1
 R3
@@ -784,9 +822,6 @@ w1543421809
 FI:/GitHub/SegwayProject/SegwayModel.sv
 L0 1
 R7
-r1
-!s85 0
-31
 !s108 1544199760.094000
 !s107 I:/GitHub/SegwayProject/SegwayModel.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/SegwayModel.sv|
@@ -825,17 +860,17 @@ r1
 !i10b 1
 !s100 Rg6>?_I<X[J;3XzJGg;cl3
 I@5n;H7T>SUM4N@WV5;GGJ0
-R43
+R46
 S1
 R3
-R44
-R45
-R46
-L0 125
-R7
 R47
 R48
 R49
+L0 125
+R7
+R50
+R51
+R52
 !i113 0
 R11
 vspi_counter_5bit
@@ -847,17 +882,17 @@ r1
 !i10b 1
 !s100 E^eEz0[3KD0E@Fi8]WSQR3
 I]Sl>gVHjW:Z2WfGG3aS3G0
-R43
+R46
 S1
 R3
-R44
-R45
-R46
-L0 104
-R7
 R47
 R48
 R49
+L0 104
+R7
+R50
+R51
+R52
 !i113 0
 R11
 vSPI_mstr16
@@ -869,17 +904,17 @@ r1
 !i10b 1
 !s100 _?a9NFTFlSb1=M2P5N2@W3
 IoAhX7o=Szf`4RB5I5Rz]G1
-R43
+R46
 S1
 R3
-R44
-R45
-R46
-L0 1
-R7
 R47
 R48
 R49
+L0 1
+R7
+R50
+R51
+R52
 !i113 0
 R11
 n@s@p@i_mstr16
@@ -892,17 +927,17 @@ r1
 !i10b 1
 !s100 582[Kd[b38jOU]JhS^_FC1
 Io`GB_ldaL0LGG?okXeJPP2
-R43
+R46
 S1
 R3
-R44
-R45
-R46
-L0 140
-R7
 R47
 R48
 R49
+L0 140
+R7
+R50
+R51
+R52
 !i113 0
 R11
 vsr_ff
@@ -914,40 +949,39 @@ r1
 !i10b 1
 !s100 cj3D<R@Xmb0aCfK1`YYKB0
 I3gj[>867KVzg4iEgDN:bn2
-R43
+R46
 S1
 R3
-R44
-R45
-R46
-L0 174
-R7
 R47
 R48
 R49
+L0 174
+R7
+R50
+R51
+R52
 !i113 0
 R11
 vsr_flipflop
 R0
-R35
-!i10b 1
-!s100 6^4Fd<=l>mO<R3NF=^cTT2
-IhzN;LgoL>P=;LVQ>caK^;3
 R1
-R36
-S1
-R3
-R37
-R38
-R39
-L0 27
-R7
 r1
 !s85 0
 31
+!i10b 1
+!s100 6^4Fd<=l>mO<R3NF=^cTT2
+IhzN;LgoL>P=;LVQ>caK^;3
+R39
+S1
+R3
 R40
 R41
 R42
+L0 27
+R7
+R43
+R44
+R45
 !i113 0
 R11
 vsteer_en_SM
@@ -957,19 +991,19 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 <;93YV80a?H<cPi6?GYhO1
-IOO8O4>1z2^QiGQFAaIb5=2
-Z51 !s105 steer_en_SM_sv_unit
+!s100 oGRam519k[A_Of[O4:`EX2
+IFRDWl[RgI7BWefT=[83O`2
+Z54 !s105 steer_en_SM_sv_unit
 S1
 R3
-Z52 w1544391003
-Z53 8I:/GitHub/SegwayProject/steer_en_SM.sv
-Z54 FI:/GitHub/SegwayProject/steer_en_SM.sv
+Z55 w1544395028
+Z56 8I:/GitHub/SegwayProject/steer_en_SM.sv
+Z57 FI:/GitHub/SegwayProject/steer_en_SM.sv
 L0 2
 R7
-Z55 !s108 1544391005.891000
-Z56 !s107 I:/GitHub/SegwayProject/steer_en_SM.sv|
-Z57 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/steer_en_SM.sv|
+Z58 !s108 1544395030.923000
+Z59 !s107 I:/GitHub/SegwayProject/steer_en_SM.sv|
+Z60 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/steer_en_SM.sv|
 !i113 0
 R11
 nsteer_en_@s@m
@@ -991,7 +1025,7 @@ R7
 !s107 I:/GitHub/SegwayProject/steer_en_SM_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/steer_en_SM_tb.v|
 !i113 0
-R15
+R14
 nsteer_en_@s@m_tb
 vtimer
 R0
@@ -1002,26 +1036,28 @@ r1
 !i10b 1
 !s100 @kX9UPFfRc5?2Dbh0CMfm2
 IM[dXTQ<UMKJ:g7XWTHLf31
-R51
+R54
 S1
 R3
-R52
-R53
-R54
-L0 121
-R7
 R55
 R56
 R57
+L0 121
+R7
+R58
+R59
+R60
 !i113 0
 R11
 vUART_rcv
 R0
-!s110 1544199761
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 fm8SXDFdlzgkcljSQ;ecU1
 I;nLTJlVn8X`8<XCHn@R6f2
-R1
 !s105 UART_rcv_sv_unit
 S1
 R3
@@ -1030,9 +1066,6 @@ w1541607663
 FI:/GitHub/SegwayProject/UART_rcv.sv
 L0 1
 R7
-r1
-!s85 0
-31
 !s108 1544199761.838000
 !s107 I:/GitHub/SegwayProject/UART_rcv.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/UART_rcv.sv|
@@ -1040,25 +1073,24 @@ r1
 R11
 n@u@a@r@t_rcv
 vUART_tx
-!s110 1544199762
+R1
+r1
+!s85 0
+31
 !i10b 1
 !s100 zeQn5;;m?MNn3OXo6Q5<60
 IGQzKN=3[YzQ:4eaT_MFa[2
-R1
 R3
 w1541607902
 8I:/GitHub/SegwayProject/UART_tx.v
 FI:/GitHub/SegwayProject/UART_tx.v
 L0 1
 R7
-r1
-!s85 0
-31
 !s108 1544199762.523000
 !s107 I:/GitHub/SegwayProject/UART_tx.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/UART_tx.v|
 !i113 0
-R15
+R14
 n@u@a@r@t_tx
 vup_dwn_clk4
 R0

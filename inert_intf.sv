@@ -22,13 +22,15 @@ module inert_intf(clk, rst_n, vld, ptch, SS_n, SCLK, MOSI, MISO, INT);
 
   typedef enum reg [3:0] {INIT1, INIT2, INIT3, INIT4, WAIT, RD1, RD2, RD3, RD4} state_t;  //define states as enumerated type
   state_t state, nxt_state;
-  logic [15:0] cmd;
+  logic [15:0] cmd, full_rd_data;
   logic [7:0] rd_data;
   logic wrt, done, vldSM, ptchL_en, ptchH_en, AZL_en, AZH_en;
 
+  assign rd_data = full_rd_data[7:0];
+
   //instantiate SPI_mstr16
   SPI_mstr16 iSPI(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), 
-                  .MISO(MISO), .wrt(wrt), .cmd(cmd), .done(done), .rd_data(rd_data));
+                  .MISO(MISO), .wrt(wrt), .cmd(cmd), .done(done), .rd_data(full_rd_data));
 
   //instantiate inertial_integrator
   inertial_integrator iINT(.clk(clk), .rst_n(rst_n), .vld(vld), .ptch_rt(ptch_rt), .AZ(AZ), .ptch(ptch));

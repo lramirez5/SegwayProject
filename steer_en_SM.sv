@@ -1,5 +1,5 @@
 //Lucas Wysiatko
-module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off);
+module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off,  load_cell_diff);
 
   parameter fast_sim = 1'b0;	// don't wait for the entire timer when this is a 1
 
@@ -44,7 +44,7 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off);
   logic diff_gt_1_4;			// asserted if load cell difference exceeds 1/4 sum (rider not situated)
   logic diff_gt_15_16;			// asserted if load cell difference is great (rider stepping off)
   logic [12:0] load_cell_sum;		// sum of left and right load cells
-  logic signed [11:0] load_cell_diff;   // difference between left and right load cells
+  output signed [11:0] load_cell_diff;   // difference between left and right load cells
   logic [11:0] abs_load_cell_diff;
 
   assign load_cell_sum = lft_load + rght_load;

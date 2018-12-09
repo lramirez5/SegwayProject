@@ -11,7 +11,7 @@ wire [20:0] max_cnt, en_steer_max_cnt, ovr_spd_max_cnt, batt_low_max_cnt;
 
 PWM_piezo piezo_pwm(.clk(clk), .rst_n(rst_n), .max_cnt(max_cnt), .duty(duty), .PWM_sig(wave));
 
-timer piezo_timer(.clk(clk), .rst_n(rst_n), .reset(~(en_steer | ovr_spd | batt_low)), .tmr(tmr));
+Piezo_Timer piezo_timer(.clk(clk), .rst_n(rst_n), .reset(~(en_steer | ovr_spd | batt_low)), .tmr(tmr));
 
 assign en_steer_max_cnt = 21'h01E838;
 assign ovr_spd_max_cnt = 21'h00E400;
@@ -33,7 +33,7 @@ assign piezo_n = |duty & ~piezo;
 endmodule
 
 
-module timer(clk, rst_n, reset, tmr);
+module Piezo_Timer(clk, rst_n, reset, tmr);
 
 input clk, rst_n, reset;
 
