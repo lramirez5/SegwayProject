@@ -23,13 +23,13 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off);
   // as the hills, but very handy...remember it.
   //////////////////////////////////////////////////////////////////////////// 
 
-  output logic en_steer;	// enables steering (goes to balance_cntrl)
-  output logic rider_off;	// pulses high for one clock on transition back to initial state
+  output reg en_steer;	// enables steering (goes to balance_cntrl)
+  output reg rider_off;	// pulses high for one clock on transition back to initial state
 
   wire tmr_full;	// asserted when timer reaches 1.3 sec
   reg clr_tmr;		// clears the 1.3sec timer
 
-  timer tmr(.clk(clk), .rst_n(rst_n), .clr_tmr(clr_tmr), .tmr_full(tmr_full));
+  timer #(fast_sim) tmr(.clk(clk), .rst_n(rst_n), .clr_tmr(clr_tmr), .tmr_full(tmr_full));
   
   // You fill out the rest...use good SM coding practices ///
   typedef enum reg [1:0] {IDLE, WAIT, STEER} state_t;
@@ -67,12 +67,13 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off);
     //default outputs
     clr_tmr = 0;
     en_steer = 0;
-    rider_off = 0; 
+    rider_off = 1; 
     nxt_state = IDLE;
     case(state)
 
     IDLE: if(sum_gt_min) begin
       clr_tmr = 1;
+      rider_off = 0;
       nxt_state = WAIT;
     end
 
@@ -83,13 +84,17 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off);
     else if(diff_gt_1_4) begin
       clr_tmr = 1;
       nxt_state = WAIT;
+      rider_off = 0;
     end
     else if(tmr_full) begin
       en_steer = 1;
       nxt_state = STEER;
+      rider_off = 0;
     end
-    else
+    else begin
       nxt_state = WAIT;
+      rider_off = 0;
+    end
 
     STEER: if(sum_lt_min) begin
       rider_off = 1;
@@ -98,10 +103,12 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off);
     else if(diff_gt_15_16) begin
       clr_tmr = 1;
       nxt_state = WAIT;
+      rider_off = 0;
     end
     else begin
       en_steer = 1;
       nxt_state = STEER;
+      rider_off = 0;
     end
 
     default: nxt_state = IDLE;
@@ -113,12 +120,14 @@ endmodule
 
 module timer(clk, rst_n, clr_tmr, tmr_full);
 
+parameter fast_sim = 1'b0;
+
 input clk, rst_n, clr_tmr;
 output tmr_full;
 
 reg [25:0] count;
 
-assign tmr_full = &count;
+assign tmr_full = fast_sim ? &count[14:0] : &count;
 
 always @(posedge clk, negedge rst_n)
 	if(!rst_n)

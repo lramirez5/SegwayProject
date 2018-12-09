@@ -74,6 +74,14 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	duty
 
+} {} {}} I:/GitHub/SegwayProject/steer_en_SM.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/steer_en_SM.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module steer_en_SM
+-- Compiling module timer
+
+Top level modules:
+	steer_en_SM
+
 } {} {}} I:/GitHub/SegwayProject/PiezoTest.v {1 {vlog -work work -vopt -stats=none I:/GitHub/SegwayProject/PiezoTest.v
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 -- Compiling module PiezoTest
@@ -87,6 +95,13 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 
 Top level modules:
 	piezo_tb
+
+} {} {}} I:/GitHub/SegwayProject/Segway.v {1 {vlog -work work -vopt -stats=none I:/GitHub/SegwayProject/Segway.v
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module Segway
+
+Top level modules:
+	Segway
 
 } {} {}} I:/GitHub/SegwayProject/ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/ADC128S.sv
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014

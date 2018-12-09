@@ -1,3 +1,8 @@
 *.bak
 *.mti
 work\*
+work/_info
+work/_lib.qdb
+work/_lib1_5.qdb
+work/_lib1_5.qtl
+Segway.cr.mti

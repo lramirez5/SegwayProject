@@ -4,34 +4,25 @@ module steer_en_SM_tb();
   // Declare any registers needed for stimulus //
   //////////////////////////////////////////////
   
-  reg clk,rst_n;
-  reg tmr_full;				// 1.3sec expired
-  reg sum_gt_min;			// weight exceed minimum rider weight + hysteresis
-  reg sum_lt_min;			// weight is less than minimum rider weight - hysteresis
-  reg diff_gt_eigth;		// Rider not balanced side to side
-  reg diff_gt_15_16;			// Rider stepping off
-  
+  reg clk, rst_n;
+  reg [11:0] lft_ld, rght_ld;
+
   ////////////////////////////////////////////
   // declare wires to hook SM output up to //
   //////////////////////////////////////////
-  wire clr_tmr, en_steer, rider_off;
+  wire en_steer, rider_off;
   
   //////////////////////
   // Instantiate DUT //
   ////////////////////
-  steer_en_SM iDUT(.clk(clk),.rst_n(rst_n),.tmr_full(tmr_full),.sum_gt_min(sum_gt_min),
-                   .sum_lt_min(sum_lt_min),.diff_gt_eigth(diff_gt_eigth),
-				   .diff_gt_15_16(diff_gt_15_16),.clr_tmr(clr_tmr),.en_steer(en_steer),
-				   .rider_off(rider_off));
+  steer_en_SM #(1'b1)
+		iDUT(.clk(clk),.rst_n(rst_n), .lft_load(lft_ld), .rght_load(rght_ld), .en_steer(en_steer), .rider_off(rider_off));
   
   initial begin
     clk=0;
 	rst_n = 0;
-	tmr_full = 0;
-	sum_gt_min = 0;
-	sum_lt_min = 1;
-	diff_gt_eigth = 0;
-	diff_gt_15_16 = 0;
+	lft_ld = 12'h000;
+	rght_ld = 12'h000;
 	
 	@(posedge clk);
 	@(negedge clk);
@@ -48,14 +39,15 @@ module steer_en_SM_tb();
 	  @(negedge clk);
 	end
 	
-	//////////////////////////////////////////////////
-	// Now assert sum_gt_min and check for clr_tmr //
-	////////////////////////////////////////////////
-	sum_gt_min = 1;
-	sum_lt_min = 0;
-	diff_gt_eigth = 1;
+	//////////////////////////////////////////////////////////
+	// Now assert lft_ld and check for clr_tmr //
+	////////////////////////////////////////////////////////
+	lft_ld = 12'h400;
+//	sum_gt_min = 1;
+//	sum_lt_min = 0;
+//	diff_gt_eigth = 1;
 	@(negedge clk);
-	if (!clr_tmr) begin
+	if (!iDUT.clr_tmr) begin
 	  $display("ERROR: clr_tmr should be asserted after sum_gt_min becomes true\n");
 	  $stop();
 	end
@@ -69,7 +61,7 @@ module steer_en_SM_tb();
 	    $display("ERROR: no outputs should occur until rider exceed min weight\n");
 		$stop();
 	  end
-	  if (!clr_tmr) begin
+	  if (!iDUT.clr_tmr) begin
 	    $display("ERROR: clr_tmr should be asserted this time\n");
 	    $stop();
 	  end
@@ -79,7 +71,8 @@ module steer_en_SM_tb();
 	////////////////////////////////////////////////////////////
 	// Now ensure that timer has to expire prior to en_steer //
 	//////////////////////////////////////////////////////////
-	diff_gt_eigth = 0;
+	rght_ld = 12'h400;
+//	diff_gt_eigth = 0;
 	repeat (2) begin
 	  if (en_steer | rider_off) begin
 	    $display("ERROR: no outputs should occur until timer expires\n");
@@ -91,7 +84,7 @@ module steer_en_SM_tb();
 	/////////////////////////////////////////////////////////////////////////////
 	// When tmr_full becomes true en_steer should become true one clock later //
 	///////////////////////////////////////////////////////////////////////////	
-	tmr_full = 1;
+	@(iDUT.tmr_full);
 	@(negedge clk);
 	if (!en_steer) begin
 	  $display("ERROR: en_steer should be set now\n");
@@ -101,7 +94,9 @@ module steer_en_SM_tb();
 	//////////////////////////////////////////////////////////////	
     // Nothing should happend until diff_gt_15_16 becomes true //
     ////////////////////////////////////////////////////////////
-	diff_gt_eigth = 1;
+	@(negedge clk);
+	rght_ld = 12'h200;
+//	diff_gt_eigth = 1;
 	@(negedge clk);
 	repeat (2) begin
 	  if (!en_steer | rider_off) begin
@@ -114,8 +109,8 @@ module steer_en_SM_tb();
 	/////////////////////////////////////////////////////////////////
 	// Now diff_gt_15_16 is asserted and it should clear en_steer //
 	///////////////////////////////////////////////////////////////
-	diff_gt_15_16 = 1;
-	tmr_full = 0;
+	rght_ld = 12'h008;
+//	diff_gt_15_16 = 1;
 	@(negedge clk)
 	if (en_steer) begin
 	  $display("ERROR: clr_en_steer should be set now\n");
@@ -135,8 +130,9 @@ module steer_en_SM_tb();
 	///////////////////////////////////////////////////////////////////////////
 	// Now assert sum_lt_min and it should transition back to initial state //
 	/////////////////////////////////////////////////////////////////////////
-	sum_gt_min = 0;
-    sum_lt_min = 1;
+	lft_ld = 12'h100;
+//	sum_gt_min = 0;
+//    sum_lt_min = 1;
     @(negedge clk);
 	if (iDUT.state==2'b00) begin
 	  $display("Yahoo! test passed!\n");
@@ -150,8 +146,10 @@ module steer_en_SM_tb();
 	end
 
 /////////////////////////////////////////////
-	diff_gt_15_16 = 0;
-	diff_gt_eigth = 0;
+	lft_ld = 12'h000;
+	rght_ld = 12'h000;
+//	diff_gt_15_16 = 0;
+//	diff_gt_eigth = 0;
 	repeat (2) begin
 	  if (en_steer | ~rider_off) begin
 	    $display("ERROR: only rider_off output should occur until rider exceed min weight\n");
@@ -163,11 +161,12 @@ module steer_en_SM_tb();
 	//////////////////////////////////////////////////
 	// Now assert sum_gt_min and check for clr_tmr //
 	////////////////////////////////////////////////
-	sum_gt_min = 1;
-	sum_lt_min = 0;
-	diff_gt_eigth = 1;
+	rght_ld = 12'h300;
+//	sum_gt_min = 1;
+//	sum_lt_min = 0;
+//	diff_gt_eigth = 1;
 	@(negedge clk);
-	if (!clr_tmr) begin
+	if (!iDUT.clr_tmr) begin
 	  $display("ERROR: clr_tmr should be asserted after sum_gt_min becomes true\n");
 	  $stop();
 	end
@@ -181,7 +180,7 @@ module steer_en_SM_tb();
 	    $display("ERROR: no outputs should occur until rider exceed min weight\n");
 		$stop();
 	  end
-	  if (!clr_tmr) begin
+	  if (!iDUT.clr_tmr) begin
 	    $display("ERROR: clr_tmr should be asserted this time\n");
 	    $stop();
 	  end
@@ -191,7 +190,8 @@ module steer_en_SM_tb();
 	////////////////////////////////////////////////////////////
 	// Now ensure that timer has to expire prior to en_steer //
 	//////////////////////////////////////////////////////////
-	diff_gt_eigth = 0;
+	lft_ld = 12'h280;
+//	diff_gt_eigth = 0;
 	repeat (2) begin
 	  if (en_steer | rider_off) begin
 	    $display("ERROR: no outputs should occur until timer expires\n");
@@ -203,7 +203,6 @@ module steer_en_SM_tb();
 	/////////////////////////////////////////////////////////////////////////////
 	// When tmr_full becomes true en_steer should become true one clock later //
 	///////////////////////////////////////////////////////////////////////////	
-	tmr_full = 1;
 	@(negedge clk);
 	if (!en_steer) begin
 	  $display("ERROR: en_steer should be set now\n");
@@ -213,7 +212,8 @@ module steer_en_SM_tb();
 	//////////////////////////////////////////////////////////////	
     // Nothing should happend until diff_gt_15_16 becomes true //
     ////////////////////////////////////////////////////////////
-	diff_gt_eigth = 1;
+	lft_ld = 12'h006;
+//	diff_gt_eigth = 1;
 	@(negedge clk);
 	repeat (2) begin
 	  if (!en_steer | rider_off) begin
@@ -223,8 +223,9 @@ module steer_en_SM_tb();
 	  @(negedge clk);
 	end	
 
-	sum_gt_min = 0;
-    sum_lt_min = 1;
+	rght_ld = 12'h004;
+//	sum_gt_min = 0;
+//    sum_lt_min = 1;
     @(negedge clk);
 	if (iDUT.state==2'b00 & rider_off) begin
 	  $display("Yahoo! test passed!\n");
@@ -241,6 +242,6 @@ module steer_en_SM_tb();
   end
   
   always
-    #10 clk = ~clk;
+    #20 clk = ~clk;
 	
 endmodule
