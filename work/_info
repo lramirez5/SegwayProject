@@ -66,12 +66,12 @@ INK2B]gW[3CRR28A9D`KSV0
 !s105 ADC128S_sv_unit
 S1
 R3
-w1544234538
+w1544397036
 8I:/GitHub/SegwayProject/ADC128S.sv
 FI:/GitHub/SegwayProject/ADC128S.sv
 L0 1
 R7
-!s108 1544234540.783000
+!s108 1544457824.182000
 !s107 I:/GitHub/SegwayProject/ADC128S.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/ADC128S.sv|
 !i113 0
@@ -155,17 +155,17 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 n]h71dJ[Hej]Ib9kQO_L13
-I>L3]KLR@=SCQTgJNB:AW:3
+!s100 @6^gRFmL1KSo<eXD_B[lT0
+IABZB5KOL3n@_T]TUS_D3B1
 !s105 balance_cntrl_sv_unit
 S1
 R3
-w1544156981
+w1544459013
 8I:/GitHub/SegwayProject/balance_cntrl.sv
 FI:/GitHub/SegwayProject/balance_cntrl.sv
 L0 1
 R7
-!s108 1544199751.884000
+!s108 1544460439.125000
 !s107 I:/GitHub/SegwayProject/balance_cntrl.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/balance_cntrl.sv|
 !i113 0
@@ -594,17 +594,17 @@ r1
 !i10b 1
 !s100 AH]>>?P<C=b9IOVe1kbWe0
 IE3i_L8>AEH[VI1AGXGbP=0
-Z39 !s105 PWM11_sv_unit
+!s105 PWM11_sv_unit
 S1
 R3
-Z40 w1539181812
-Z41 8I:/GitHub/SegwayProject/PWM11.sv
-Z42 FI:/GitHub/SegwayProject/PWM11.sv
+w1539181812
+8I:/GitHub/SegwayProject/PWM11.sv
+FI:/GitHub/SegwayProject/PWM11.sv
 L0 1
 R7
-Z43 !s108 1544199757.220000
-Z44 !s107 I:/GitHub/SegwayProject/PWM11.sv|
-Z45 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM11.sv|
+!s108 1544199757.220000
+!s107 I:/GitHub/SegwayProject/PWM11.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM11.sv|
 !i113 0
 R11
 n@p@w@m11
@@ -615,19 +615,19 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 ^kUfWIjCY2had>BW]:8dR2
-IjTQF;U^zXb0fWofDmGN`90
-!s105 PWM_piezo_sv_unit
+!s100 EeBO<lg8[jKn3Mnh=6LV03
+I=BE;b7RNnhiHeCh^k>ikm0
+Z39 !s105 PWM_piezo_sv_unit
 S1
 R3
-w1544161354
-8I:/GitHub/SegwayProject/PWM_piezo.sv
-FI:/GitHub/SegwayProject/PWM_piezo.sv
+Z40 w1544459307
+Z41 8I:/GitHub/SegwayProject/PWM_piezo.sv
+Z42 FI:/GitHub/SegwayProject/PWM_piezo.sv
 L0 1
 R7
-!s108 1544199756.820000
-!s107 I:/GitHub/SegwayProject/PWM_piezo.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM_piezo.sv|
+Z43 !s108 1544460439.639000
+Z44 !s107 I:/GitHub/SegwayProject/PWM_piezo.sv|
+Z45 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/PWM_piezo.sv|
 !i113 0
 R11
 n@p@w@m_piezo
@@ -761,21 +761,20 @@ r1
 !i113 0
 R14
 vSegway
-!s110 1544396225
-!i10b 1
-!s100 H7NAVOZ=>l?;XDcofJZ4l1
-IEWTMUWSNYYzXI;eSabhWP0
 R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 jhEDQ^zZ10=H6>O7E3D1:2
+IKadz^aHQL`Caz3>P60X=^1
 R3
-w1544395754
+w1544457086
 8I:/GitHub/SegwayProject/Segway.v
 FI:/GitHub/SegwayProject/Segway.v
 L0 1
 R7
-r1
-!s85 0
-31
-!s108 1544396225.369000
+!s108 1544457825.052000
 !s107 I:/GitHub/SegwayProject/Segway.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/GitHub/SegwayProject/Segway.v|
 !i113 0
@@ -783,24 +782,24 @@ R14
 n@segway
 vSegway_tb
 R0
-!s110 1544396459
-!i10b 1
-!s100 RbEoO@L=FZRk_aS5gzJ1E2
-Ik0[;8a>fhPiDCSk?[mJ;A1
 R1
-!s105 Segway_tb_sv_unit
-S1
-R3
-w1544396457
-8I:/GitHub/SegwayProject/Segway_tb.sv
-FI:/GitHub/SegwayProject/Segway_tb.sv
-L0 1
-R7
 r1
 !s85 0
 31
-!s108 1544396459.516000
-!s107 I:/GitHub/SegwayProject/Segway_tb.sv|
+!i10b 1
+!s100 <=[Tk`fEA42mACVQHCo0f2
+Ig`@VKC6782Xh@m`O24Hln1
+!s105 Segway_tb_sv_unit
+S1
+R3
+w1544461311
+8I:/GitHub/SegwayProject/Segway_tb.sv
+FI:/GitHub/SegwayProject/Segway_tb.sv
+Ftb_tasks.v
+L0 1
+R7
+!s108 1544461433.225000
+!s107 tb_tasks.v|I:/GitHub/SegwayProject/Segway_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/GitHub/SegwayProject/Segway_tb.sv|
 !i113 0
 R11
@@ -969,15 +968,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 6^4Fd<=l>mO<R3NF=^cTT2
-IhzN;LgoL>P=;LVQ>caK^;3
+!s100 LQmJWC<h@<d8P6EglomRh2
+I?6OM9?SEgbI9REjAdBMl53
 R39
 S1
 R3
 R40
 R41
 R42
-L0 27
+L0 26
 R7
 R43
 R44

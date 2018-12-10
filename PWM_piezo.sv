@@ -14,8 +14,6 @@ sr_flipflop pwm_flop(.q(PWM_sig), .s(set), .r(reset), .rst_n(rst_n), .clk(clk));
 assign reset = (cnt >= duty) ? 1 : 0;
 assign set = ~|cnt;
 
-initial cnt = 21'b0;
-
 always @(posedge clk, negedge rst_n)
   if(!rst_n)
     cnt <= 21'b0;
