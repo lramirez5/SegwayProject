@@ -59,17 +59,16 @@ module balance_cntrl(clk, rst_n, vld, pwr_up, ptch, ld_cell_diff, rider_off, en_
 
 	assign next_integrator = {{8{ptch_err_sat[9]}}, ptch_err_sat} + full_integrator;
 
-	assign ov = (ptch_err_sat[9] & full_integrator[17] & ~next_integrator[17]) |
-		    (~ptch_err_sat[9] & ~full_integrator[17] & next_integrator[17]) ? 1'b1 : 1'b0;
+	assign ov = (ptch_err_sat[9] & full_integrator[17] & ~next_integrator[17]) | (~ptch_err_sat[9] & ~full_integrator[17] & next_integrator[17]);
 
 	assign integrator = (fast_sim != 0) ? full_integrator[17:2] : full_integrator[17:6];
 
 	always @(posedge clk, negedge rst_n)
 		if(!rst_n)
 			full_integrator <= 18'h0;
-		else if(rider_off)
+		else if(rider_off | ~pwr_up)
 			full_integrator <= 18'h0;
-		else if(vld & ~ov)
+		else if(vld & ~ov & pwr_up)
 			full_integrator <= next_integrator;
 			
 	always @(posedge clk, negedge rst_n)
