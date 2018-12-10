@@ -1,18 +1,20 @@
-module piezo(clk, rst_n, en_steer, ovr_spd, batt_low, piezo, piezo_n);
+module piezo(clk, rst_n, en_steer, ovr_spd, batt_low, steer_en_clr_tmr, piezo, piezo_n, steer_en_tmr_full);
 
-input clk, rst_n, en_steer, ovr_spd, batt_low;
+parameter fast_sim = 1'b0;	// don't wait for the entire timer when this is a 1
 
-output piezo, piezo_n;
+input clk, rst_n, en_steer, ovr_spd, batt_low, steer_en_clr_tmr;
+
+output piezo, piezo_n, steer_en_tmr_full;
 
 wire wave;
-wire [3:0] tmr;
-wire [19:0] duty;
-wire [20:0] max_cnt, en_steer_max_cnt, ovr_spd_max_cnt, batt_low_max_cnt;
+wire [26:0] cnt;
+//wire [19:0] duty;
+//wire [20:0] max_cnt, en_steer_max_cnt, ovr_spd_max_cnt, batt_low_max_cnt;
 
-PWM_piezo piezo_pwm(.clk(clk), .rst_n(rst_n), .max_cnt(max_cnt), .duty(duty), .PWM_sig(wave));
+//PWM_piezo piezo_pwm(.clk(clk), .rst_n(rst_n), .max_cnt(max_cnt), .duty(duty), .PWM_sig(wave));
 
-Piezo_Timer piezo_timer(.clk(clk), .rst_n(rst_n), .reset(~(en_steer | ovr_spd | batt_low)), .tmr(tmr));
-
+Piezo_Timer piezo_timer(.clk(clk), .rst_n(rst_n), .reset(~(en_steer | ovr_spd | batt_low) | steer_en_clr_tmr), .cnt(cnt), .steer_en_tmr_full(steer_en_tmr_full));
+/*
 assign en_steer_max_cnt = 21'h01E838;
 assign ovr_spd_max_cnt = 21'h00E400;
 assign batt_low_max_cnt = 21'h03F800;
@@ -26,13 +28,18 @@ assign max_cnt = (ovr_spd_en_duty) ? ovr_spd_max_cnt :
 		 batt_low_max_cnt;
 
 assign duty = (en_steer_en_duty | ovr_spd_en_duty | batt_low_en_duty) ? (max_cnt >> 1) : 20'h0;
+*/
 
-assign piezo = |duty & wave;
-assign piezo_n = |duty & ~piezo;
+assign wave = 	(ovr_spd) ? (~cnt[12] & ~cnt[24]) :
+		(en_steer) ? (~cnt[14] & ~cnt[25] & ~cnt[26]) : 1'b0;
+
+assign piezo = (wave | (batt_low & ~cnt[15] & cnt[26] & ~cnt[25]));
+//assign piezo = |duty & wave;
+assign piezo_n = (en_steer | ovr_spd | batt_low) & ~piezo;//|duty & ~piezo;
 
 endmodule
 
-
+/*
 module Piezo_Timer(clk, rst_n, reset, tmr);
 
 input clk, rst_n, reset;
@@ -62,4 +69,4 @@ always @(posedge clk, negedge rst_n)
 		cnt <= cnt + 1;
 
 endmodule
-
+*/

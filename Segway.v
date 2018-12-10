@@ -52,6 +52,7 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   assign batt_low = batt < BATT_THRESHOLD;
 
   wire [11:0] load_cell_diff;
+  wire steer_en_tmr_full, steer_en_clr_tmr;
    
   
   ///////////////////////////////////////////////////////
@@ -76,7 +77,7 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   A2D_intf a2d_intf_DUT(// Inputs
 			.clk(clk),
 			.rst_n(rst_n),
-			.nxt(vld),  // Not sure if this is right
+			.nxt(vld),
 			.MISO(A2D_MISO),
 			// Outputs
 			.lft_ld(lft_ld),
@@ -109,15 +110,18 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 			.PWM_frwrd_rght(PWM_frwrd_rght)
 		      );
 
-  piezo piezo_DUT(	// Inputs
+  piezo #(fast_sim)
+	piezo_DUT(	// Inputs
 			.clk(clk),
 			.rst_n(rst_n),
 			.en_steer(en_steer),
 			.ovr_spd(too_fast),
 			.batt_low(batt_low),
+			.steer_en_clr_tmr(steer_en_clr_tmr),
 			// Outputs
 			.piezo(piezo),
-			.piezo_n(piezo_n)
+			.piezo_n(piezo_n),
+			.steer_en_tmr_full(steer_en_tmr_full)
 		  );
 
   inert_intf inert_intf_DUT(	// Inputs
@@ -151,16 +155,17 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
 				.too_fast(too_fast)
 				);
 
-  steer_en_SM #(fast_sim)
-		steer_en_DUT(	// Inputs
+  steer_en_SM steer_en_DUT(	// Inputs
 				.clk(clk),
 				.rst_n(rst_n),
 				.lft_load(lft_ld),
 				.rght_load(rght_ld),
+				.tmr_full(steer_en_tmr_full),
 				// Outputs
 				.en_steer(en_steer),
 				.rider_off(rider_off),
-				.load_cell_diff(load_cell_diff)
+				.load_cell_diff(load_cell_diff),
+				.clr_tmr(steer_en_clr_tmr)
 			   );
 
   /////////////////////////////////////
