@@ -76,7 +76,7 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   A2D_intf a2d_intf_DUT(// Inputs
 			.clk(clk),
 			.rst_n(rst_n),
-			.nxt(vld),  // Not sure if this is right
+			.nxt(vld),
 			.MISO(A2D_MISO),
 			// Outputs
 			.lft_ld(lft_ld),

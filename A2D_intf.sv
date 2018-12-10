@@ -23,14 +23,14 @@ SPI_mstr16 SPI(.clk(clk), .rst_n(rst_n), .wrt(wrt), .cmd(cmd), .MISO(MISO), .SS_
 round_counter rnd_counter(.clk(clk), .rst_n(rst_n), .update(update), .rnd_cnt(rnd_cnt));
 
 assign lft_en = update && (rnd_cnt == 2'b00);
-assign rght_en = update && (rnd_cnt == 2'b01);
-assign batt_en = update && (rnd_cnt == 2'b10);
+assign rght_en = update && rnd_cnt[0];
+assign batt_en = update && rnd_cnt[1];
 
 lft_ld_reg LFT(.clk(clk), .rst_n(rst_n), .en(lft_en), .lft_data_in(rd_data[11:0]), .lft_data_out(lft_ld));
 rght_ld_reg RGHT(.clk(clk), .rst_n(rst_n), .en(rght_en), .rght_data_in(rd_data[11:0]), .rght_data_out(rght_ld));
 batt_reg BATT(.clk(clk), .rst_n(rst_n), .en(batt_en), .batt_data_in(rd_data[11:0]), .batt_data_out(batt));
 
-enum {IDLE, SEND_1ST, WAIT_1, SEND_2ND} state, nxt_state;
+enum bit [1:0] {IDLE, SEND_1ST, WAIT_1, SEND_2ND} state, nxt_state;
 
 always @(posedge clk, negedge rst_n)
 	if(!rst_n)

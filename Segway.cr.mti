@@ -27,13 +27,6 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	Auth_blk_tb
 
-} {} {}} I:/GitHub/SegwayProject/balance_cntrl.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/balance_cntrl.sv
-Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
--- Compiling module balance_cntrl
-
-Top level modules:
-	balance_cntrl
-
 } {} {}} I:/GitHub/SegwayProject/SPI_mstr16.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/SPI_mstr16.sv
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 -- Compiling module SPI_mstr16
@@ -45,6 +38,34 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 
 Top level modules:
 	SPI_mstr16
+
+} {} {}} I:/GitHub/SegwayProject/tb_tasks.v {0 {vlog -work work -vopt -stats=none I:/GitHub/SegwayProject/tb_tasks.v
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(7): (vlog-2155) Global declarations are illegal in Verilog 2001 syntax.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(9): (vlog-2730) Undefined variable: 'clk'.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(10): (vlog-2730) Undefined variable: 'cmd'.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(11): (vlog-2730) Undefined variable: 'send_cmd'.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(12): (vlog-2730) Undefined variable: 'rider_lean'.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(13): (vlog-2730) Undefined variable: 'RST_n'.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(23): (vlog-2730) Undefined variable: 'cmd'.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(24): (vlog-2730) Undefined variable: 'send_cmd'.
+
+** Error: I:/GitHub/SegwayProject/tb_tasks.v(25): (vlog-2730) Undefined variable: 'clk'.
+
+
+} {3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0} {}} I:/GitHub/SegwayProject/balance_cntrl.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/balance_cntrl.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module balance_cntrl
+
+Top level modules:
+	balance_cntrl
 
 } {} {}} I:/GitHub/SegwayProject/SPI_ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/SPI_ADC128S.sv
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
@@ -110,6 +131,13 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 Top level modules:
 	Segway
 
+} {} {}} I:/GitHub/SegwayProject/UART_rcv.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/UART_rcv.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module UART_rcv
+
+Top level modules:
+	UART_rcv
+
 } {} {}} I:/GitHub/SegwayProject/ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/ADC128S.sv
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 -- Compiling module ADC128S
@@ -123,13 +151,6 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 
 Top level modules:
 	inertial_integrator
-
-} {} {}} I:/GitHub/SegwayProject/UART_rcv.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/UART_rcv.sv
-Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
--- Compiling module UART_rcv
-
-Top level modules:
-	UART_rcv
 
 } {} {}} I:/GitHub/SegwayProject/A2D_intf.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/A2D_intf.sv
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
@@ -211,6 +232,13 @@ Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
 
 Top level modules:
 	A2D_intf_tb
+
+} {} {}} I:/GitHub/SegwayProject/Segway_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/Segway_tb.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module Segway_tb
+
+Top level modules:
+	Segway_tb
 
 } {} {}} I:/GitHub/SegwayProject/up_dwn_cnt4.sv {1 {vlog -work work -vopt -sv -stats=none I:/GitHub/SegwayProject/up_dwn_cnt4.sv
 Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
