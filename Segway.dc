@@ -5,7 +5,7 @@
 #FIXME figure out which blocks to add
 read_file -format sverilog {./Segway.v ./Auth_blk.sv ./UART_rcv.sv ./piezo.sv ./SPI_mstr16.sv \
 ./A2D_intf.sv ./ADC128S.sv ./SPI_ADC128S.sv ./inert_intf.sv ./inertial_integrator.sv \
-./balance_cntrl.sv ./mtr_drv.sv ./PMW11.sv ./rst_synch.sv}
+./balance_cntrl.sv ./mtr_drv.sv ./PWM11.sv ./rst_synch.sv}
 set current_design Segway.v
 
 #define clock (400MHz) and perform set_dont_touch_network on it
