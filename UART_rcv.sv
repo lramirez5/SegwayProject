@@ -7,8 +7,7 @@ output rdy;				// signifies to core a byte has been received
 output [7:0] rx_data;		// data that was received
 
 //// Define state as enumerated type /////
-typedef enum reg {IDLE, RX_STATE} state_t;
-state_t state, nxt_state;
+enum reg {IDLE, RX_STATE} state, nxt_state;
 
 reg [8:0] shift_reg;		// shift reg (9-bits), MSB will contain stop bit when finished
 reg [3:0] bit_cnt;			// bit counter (need extra bit for stop bit)

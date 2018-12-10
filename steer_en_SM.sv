@@ -1,11 +1,13 @@
 //Lucas Wysiatko
-module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off, load_cell_diff);
+module steer_en_SM(clk, rst_n, lft_load, rght_load, tmr_full, en_steer, rider_off, clr_tmr, load_cell_diff);
 
-  parameter fast_sim = 1'b0;	// don't wait for the entire timer when this is a 1
+
+//  parameter fast_sim = 1'b0;	// don't wait for the entire timer when this is a 1
 
   input clk;				// 50MHz clock
   input rst_n;				// Active low asynch reset
   input [11:0] lft_load, rght_load;     // come from A2D_intf used to calculate sum_gt_min, sum_lt_min, diff_gt_1_4, and diff_gt_15_16
+  input tmr_full;			// asserted when timer reaches 1.3 sec
 
 
   /////////////////////////////////////////////////////////////////////////////
@@ -26,10 +28,10 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off, load_ce
   output reg en_steer;	// enables steering (goes to balance_cntrl)
   output reg rider_off;	// pulses high for one clock on transition back to initial state
 
-  wire tmr_full;	// asserted when timer reaches 1.3 sec
-  reg clr_tmr;		// clears the 1.3sec timer
+//  wire tmr_full;	// asserted when timer reaches 1.3 sec
+  output reg clr_tmr;		// clears the 1.3sec timer
 
-  timer #(fast_sim) tmr(.clk(clk), .rst_n(rst_n), .clr_tmr(clr_tmr), .tmr_full(tmr_full));
+//  Piezo_Timer #(fast_sim) tmr(.clk(clk), .rst_n(rst_n), .reset(clr_tmr), .steer_en_tmr_full(tmr_full), .cnt());
   
   // You fill out the rest...use good SM coding practices ///
   typedef enum reg [1:0] {IDLE, WAIT, STEER} state_t;
@@ -118,7 +120,7 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, en_steer, rider_off, load_ce
   
 endmodule
 
-
+/*
 module timer(clk, rst_n, clr_tmr, tmr_full);
 
 parameter fast_sim = 1'b0;
@@ -139,3 +141,4 @@ always @(posedge clk, negedge rst_n)
 		count <= count + 1;
 
 endmodule
+*/

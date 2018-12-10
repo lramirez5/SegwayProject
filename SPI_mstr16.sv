@@ -109,12 +109,12 @@ output SCLK, rise_next, fall_next;
 reg [4:0] sclk_div;
 
 assign SCLK = sclk_div[4];
-assign rise_next = (sclk_div == 5'b01111);	// SCLK will rise on the next positive edge of clk
-assign fall_next = (sclk_div == 5'b11111);	// SCLK will fall on the next positive edge of clk
+assign rise_next = ~sclk_div[4] & (&sclk_div[3:0]);	// SCLK will rise on the next positive edge of clk
+assign fall_next = &sclk_div;	// SCLK will fall on the next positive edge of clk
 
 always @(posedge clk, negedge rst_n)
 	if(!rst_n)
-		sclk_div <= 5'h0;
+		sclk_div <= 5'h00;
 	else if(rst_cnt)
 		sclk_div <= 5'b10111;	// Set SCLK between the rising edge and the falling edge
 	else if(en)
