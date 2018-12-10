@@ -49,7 +49,7 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   wire rider_off, en_steer, clr_tmr;
 
   wire batt_low;
-  assign batt_low = batt < 12'h800;
+  assign batt_low = batt < BATT_THRESHOLD;
 
   wire [11:0] load_cell_diff;
    

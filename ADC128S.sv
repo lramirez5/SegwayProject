@@ -156,9 +156,9 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
 		lft_ld <= 12'h001;
 	else if(lft_rd_en & rdy_rise & (state == SECOND))
 	  if(lft_cnt_dir)
-		lft_ld <= lft_ld + 2;
+		lft_ld <= lft_ld + 2; // Can change the rate
 	  else
-		lft_ld <= lft_ld - 2;
+		lft_ld <= lft_ld - 2; //
 
   
   always @(posedge clk, negedge rst_n)
@@ -172,9 +172,9 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
 		rght_ld <= 12'h030;
 	else if(rght_rd_en & rdy_rise & (state == SECOND))
 	  if(rght_cnt_dir)
-		rght_ld <= rght_ld + 5;
+		rght_ld <= rght_ld + 5; //
 	  else
-		rght_ld <= rght_ld - 5;
+		rght_ld <= rght_ld - 5; //
 
 
   always @(posedge clk, negedge rst_n)
