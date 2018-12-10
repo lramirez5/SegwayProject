@@ -76,10 +76,9 @@ initial begin
 
   
   repeat(50000) @(posedge clk);
-  
+  send_cmd = 1'b1; //transmit 
   //SendCmd(8'h67);	// perhaps you have a task that sends 'g' TODO
   cmd = 8'h67;
-  send_cmd = 1'b1;
   rider_lean = 14'h1FFF;
   
   //ewpwRCRO
@@ -87,13 +86,30 @@ initial begin
 
   rider_lean = 14'h0000;
 	
-  repeat(1000000) @(negedge clk);
-     $stop;
-    repeat(1000000)
-    @(posedge clk);
-    rider_lean = 14'h001;
+  repeat(100) @(negedge clk);
   
-  $stop;
+  send_cmd = 1'b0;
+  
+  cmd = 8'h00;
+
+  repeat(100)
+  @(posedge clk);
+  rider_lean = 14'h001;
+  
+  //Checked at this point power should be up.
+  //$stop;
+  
+  repeat(200)@(negedge clk);
+  send_cmd = 1'b1;
+  cmd = 8'h73;
+  repeat(400000)@(negedge clk);
+  //send_cmd = 1'b0;
+  
+  
+  //check if auth blk is in pwr2 state
+  $stop; 
+  
+  
 /*
     .
 	.	// this is the "guts" of your test

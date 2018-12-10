@@ -1,0 +1,12 @@
+1. Auth blk. I don't know how to make a self check with modules inside the DUT in testbench
+-> sending 'g' then stop sending, pwr_up is 1, checked
+-> then send 's', pwr_up returned to 0, state is OFF, checked
+-> check other states. send rideroff signal: I don't know how to do yet.
+-> TX_RX signal from UART to Auth Blk seems wierd but might be correct
+2. balance control, Inert_intf, mtr_drv
+put them through their own tb and they seem correct.
+
+TODO
+Modify ADC128S > MIN RIDER WEIGHT 
+piezo and piezo_n not behaving correctly
+With sudden increase in positive rider lean, theta platform behaving in wierd wave shape
