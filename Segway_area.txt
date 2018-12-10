@@ -1,0 +1,54 @@
+Warning: Design 'Segway' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : Segway
+Version: N-2017.09-SP5
+Date   : Sun Dec  9 18:16:04 2018
+****************************************
+
+Warning: Unable to find specified driving_cell for port 'RST_n'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'RST_n'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'RST_n'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'RST_n'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INERT_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INERT_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INERT_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INERT_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'A2D_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'A2D_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'A2D_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'A2D_MISO'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INT'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INT'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INT'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'INT'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'RX'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'RX'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'RX'. (DDB-81)
+Warning: Unable to find specified driving_cell for port 'RX'. (DDB-81)
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    tcbn40lpbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn40lpbwp_120b/tcbn40lpbwptc.db)
+
+Number of ports:                           26
+Number of nets:                          4355
+Number of cells:                         4295
+Number of combinational cells:           3947
+Number of sequential cells:               348
+Number of macros/black boxes:               0
+Number of buf/inv:                       1283
+Number of references:                     301
+
+Combinational area:               6482.700073
+Buf/Inv area:                     1218.218419
+Noncombinational area:            1683.385221
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  8166.085294
+Total area:                 undefined
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1
