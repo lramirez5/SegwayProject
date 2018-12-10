@@ -6,6 +6,7 @@ work/_lib1_5.qdb
 work/_lib1_5.qtl
 Segway.cr.mti
 vsim.wlf
+work\_lib.qdb
 
 # ignore ModelSim generated files and directories (temp files and so on)
 [_@]*

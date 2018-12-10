@@ -1,6 +1,7 @@
 //Lucas Wysiatko
 module steer_en_SM(clk, rst_n, lft_load, rght_load, tmr_full, en_steer, rider_off, clr_tmr, load_cell_diff);
 
+
 //  parameter fast_sim = 1'b0;	// don't wait for the entire timer when this is a 1
 
   input clk;				// 50MHz clock
@@ -45,16 +46,17 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, tmr_full, en_steer, rider_of
   logic diff_gt_1_4;			// asserted if load cell difference exceeds 1/4 sum (rider not situated)
   logic diff_gt_15_16;			// asserted if load cell difference is great (rider stepping off)
   logic [12:0] load_cell_sum;		// sum of left and right load cells
-  output signed [11:0] load_cell_diff;   // difference between left and right load cells
-  logic [11:0] abs_load_cell_diff;
+  logic signed [11:0] signed_load_cell_diff;
+  output [11:0] load_cell_diff;   // difference between left and right load cells
+  
 
   assign load_cell_sum = lft_load + rght_load;
   assign sum_gt_min = load_cell_sum > (MIN_RIDER_WEIGHT + HYSTERESIS);
   assign sum_lt_min = load_cell_sum < (MIN_RIDER_WEIGHT - HYSTERESIS);
-  assign load_cell_diff = lft_load - rght_load;
-  assign abs_load_cell_diff = load_cell_diff[11] ? (~load_cell_diff + 1) : load_cell_diff;
-  assign diff_gt_1_4 = abs_load_cell_diff > (load_cell_sum>>2);
-  assign diff_gt_15_16 = abs_load_cell_diff > ((load_cell_sum>>4) * 15);
+  assign signed_load_cell_diff = lft_load - rght_load;
+  assign load_cell_diff = signed_load_cell_diff[11] ? (~signed_load_cell_diff + 1) : signed_load_cell_diff;
+  assign diff_gt_1_4 = load_cell_diff > (load_cell_sum>>2);
+  assign diff_gt_15_16 = load_cell_diff > ((load_cell_sum>>4) * 15);
 
   //flop for state machine
   always_ff@(posedge clk, negedge rst_n)
