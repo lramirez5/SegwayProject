@@ -58,27 +58,13 @@ UART_tx iTX(.clk(clk),.rst_n(RST_n),.TX(RX_TX),.trmt(send_cmd),.tx_data(cmd),.tx
 
 
 initial begin
-  //TODO initialize;		// perhaps you make a task that initializes everything?  
-  ////// Start issuing commands to DUT //////
-  //initialize (RST_n,clk, send_cmd,SS_n , MOSI, PWM_frwrd_rght, PWM_rev_rght,
-  //     PWM_frwrd_lft, PWM_rev_lft, rider_lean,MISO , A2D_MISO,INT);
-  rider_lean = 14'b0;	
-  clk = 1'b0;
-  RST_n = 1'b0;
-  send_cmd = 1'b0;
-  repeat (50) @(posedge clk);
-  RST_n = 1'b1;
-			
-					// Serial in from inertial sensor
-		
-
-
-
-  
+  Initialize;		
+ 
+	
   repeat(50000) @(posedge clk);
-  send_cmd = 1'b1; //transmit 
-  //SendCmd(8'h67);	// perhaps you have a task that sends 'g' TODO
-  cmd = 8'h67;
+ 
+  SendCmd(8'h67);	// perhaps you have a task that sends 'g' 
+ 
   rider_lean = 14'h1FFF;
   
   //ewpwRCRO
@@ -95,13 +81,12 @@ initial begin
   repeat(100)
   @(posedge clk);
   rider_lean = 14'h001;
-  
+
   //Checked at this point power should be up.
   //$stop;
   
   repeat(200)@(negedge clk);
-  send_cmd = 1'b1;
-  cmd = 8'h73;
+  SendCmd (8'h73);
   repeat(400000)@(negedge clk);
   //send_cmd = 1'b0;
   
@@ -123,7 +108,7 @@ end
 always
   #10 clk = ~clk;
 
-//`include "tb_tasks.v"	// perhaps you have a separate included file that has handy tasks.
+`include "tb_tasks.v"	// perhaps you have a separate included file that has handy tasks.
 
 endmodule	
 
