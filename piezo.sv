@@ -13,7 +13,7 @@ wire [26:0] cnt;
 
 //PWM_piezo piezo_pwm(.clk(clk), .rst_n(rst_n), .max_cnt(max_cnt), .duty(duty), .PWM_sig(wave));
 
-Piezo_Timer piezo_timer(.clk(clk), .rst_n(rst_n), .reset(~(en_steer | ovr_spd | batt_low) | steer_en_clr_tmr), .cnt(cnt), .steer_en_tmr_full(steer_en_tmr_full));
+Piezo_Timer #(fast_sim) piezo_timer(.clk(clk), .rst_n(rst_n), .reset(~(en_steer | ovr_spd | batt_low) | steer_en_clr_tmr), .cnt(cnt), .steer_en_tmr_full(steer_en_tmr_full));
 /*
 assign en_steer_max_cnt = 21'h01E838;
 assign ovr_spd_max_cnt = 21'h00E400;
