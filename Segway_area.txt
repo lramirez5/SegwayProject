@@ -1,10 +1,9 @@
-Warning: Design 'Segway' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : Segway
 Version: N-2017.09-SP5
-Date   : Mon Dec 10 10:40:12 2018
+Date   : Mon Dec 10 17:15:27 2018
 ****************************************
 
 Warning: Unable to find specified driving_cell for port 'RST_n'. (DDB-81)
@@ -33,22 +32,20 @@ Library(s) Used:
     tcbn40lpbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn40lpbwp_120b/tcbn40lpbwptc.db)
 
 Number of ports:                           26
-Number of nets:                          5510
-Number of cells:                         5444
-Number of combinational cells:           5094
-Number of sequential cells:               350
+Number of nets:                          5437
+Number of cells:                         5391
+Number of combinational cells:           5045
+Number of sequential cells:               346
 Number of macros/black boxes:               0
-Number of buf/inv:                       1699
-Number of references:                     311
+Number of buf/inv:                       1680
+Number of references:                     302
 
-Combinational area:               7994.624507
-Buf/Inv area:                     1628.524826
-Noncombinational area:            1677.740414
+Combinational area:               8150.914901
+Buf/Inv area:                     1549.497624
+Noncombinational area:            1711.785622
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                  9672.364921
+Total cell area:                  9862.700523
 Total area:                 undefined
-
-Information: This design contains black box (unknown) components. (RPT-8)
 1
