@@ -1,4 +1,4 @@
-module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI, lft_ld, rght_ld, batt);
+module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI, lft_ld_val, rght_ld_val, batt_val, write);
   //////////////////////////////////////////////////|
   // Model of a National Semi Conductor ADC128S    ||
   // 12-bit A2D converter.  NOTE: this model       ||
@@ -19,8 +19,28 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI, lft_ld, rght_ld, batt);
   wire [15:0] A2D_data,cmd;
   wire rdy_rise;
 
-  input unsigned [11:0] lft_ld, rght_ld, batt;
+  input write;
+  input unsigned [11:0] lft_ld_val, rght_ld_val, batt_val;
+  reg unsigned [11:0] lft_ld, rght_ld, batt;
 //  reg lft_cnt_dir, rght_cnt_dir;
+
+  always @(posedge clk, negedge rst_n)
+	if(!rst_n)
+		lft_ld <= 12'h000;
+	else if(write)
+		lft_ld <= lft_ld_val;
+
+  always @(posedge clk, negedge rst_n)
+	if(!rst_n)
+		rght_ld <= 12'h000;
+	else if(write)
+		rght_ld <= rght_ld_val;
+
+  always @(posedge clk, negedge rst_n)
+	if(!rst_n)
+		batt <= 12'hFFF;
+	else if(write)
+		batt <= batt_val;
 
   wire lft_rd_en, rght_rd_en, batt_rd_en;
 
@@ -34,7 +54,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI, lft_ld, rght_ld, batt);
   /////////////////////////////////////////////
   reg rdy_ff;				// used for edge detection on rdy
   reg [2:0] channel;		// pointer to last channel specified for A2D conversion to be performed on.
-//  reg [11:0] value, lft_value, rght_value, batt_value;
+  reg [11:0] value, lft_value, rght_value, batt_value;
   
   /////////////////////////////////////////////
   // SM outputs declared as type logic next //
@@ -57,7 +77,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI, lft_ld, rght_ld, batt);
 	  if ((channel!=3'b000) && (channel!=3'b100) && (channel!=3'b101))
 	    $display("WARNING: Only channels 0,4,5 of A2D valid for this version of ADC128S\n");
 	end
-/*
+
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
 	  value <= 12'hC00;
@@ -69,7 +89,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI, lft_ld, rght_ld, batt);
 	//  else if(batt_rd_en)
 	//    value <= batt_value;
 	  value <= value - 12'h010;
-*/
+
 /*
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
