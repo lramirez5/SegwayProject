@@ -1,4 +1,4 @@
-module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
+module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI, lft_ld, rght_ld, batt);
   //////////////////////////////////////////////////|
   // Model of a National Semi Conductor ADC128S    ||
   // 12-bit A2D converter.  NOTE: this model       ||
@@ -19,8 +19,8 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
   wire [15:0] A2D_data,cmd;
   wire rdy_rise;
 
-  reg unsigned [11:0] lft_ld, rght_ld, batt;
-  reg lft_cnt_dir, rght_cnt_dir;
+  input unsigned [11:0] lft_ld, rght_ld, batt;
+//  reg lft_cnt_dir, rght_cnt_dir;
 
   wire lft_rd_en, rght_rd_en, batt_rd_en;
 
@@ -34,7 +34,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
   /////////////////////////////////////////////
   reg rdy_ff;				// used for edge detection on rdy
   reg [2:0] channel;		// pointer to last channel specified for A2D conversion to be performed on.
- // reg [11:0] value, lft_value, rght_value, batt_value;
+//  reg [11:0] value, lft_value, rght_value, batt_value;
   
   /////////////////////////////////////////////
   // SM outputs declared as type logic next //
@@ -57,7 +57,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
 	  if ((channel!=3'b000) && (channel!=3'b100) && (channel!=3'b101))
 	    $display("WARNING: Only channels 0,4,5 of A2D valid for this version of ADC128S\n");
 	end
-/*	
+/*
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
 	  value <= 12'hC00;
@@ -68,7 +68,8 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
 	//    value <= rght_value;
 	//  else if(batt_rd_en)
 	//    value <= batt_value;
-	  value <= value - 12'h010;*/
+	  value <= value - 12'h010;
+*/
 /*
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
@@ -141,10 +142,10 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
   assign A2D_data = 	(lft_rd_en) ? {4'b0000, lft_ld} :
 			(rght_rd_en) ? {4'b0000, rght_ld} :
 			(batt_rd_en) ? {4'b0000, batt} :
-			16'h0A01;
-			//{4'b0000,value};// | {13'h0000,channel};
+			16'h0001;
+			//{4'b0000,value} | {13'h0000,channel};
 
-
+/*
   always @(posedge clk, negedge rst_n)
 	if(!rst_n)
 		lft_cnt_dir <= 1;
@@ -186,6 +187,6 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
 	   else
 		batt <= {10'h000, ~batt[0]};
 
-
+*/
 endmodule  
   
