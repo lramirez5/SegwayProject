@@ -1,0 +1,478 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dI:/ECE551/Final Project
+vA2D_Intf
+Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z1 !s110 1544492376
+!i10b 1
+!s100 ]55NzLNS1U0A3fYaRG0XD1
+IUcK2:T>E>o2N];Sm=<hkB0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 A2D_Intf_sv_unit
+S1
+Z3 dI:/ECE551/Final Project 2
+w1542213878
+8I:/ECE551/Final Project 2/A2D_Intf.sv
+FI:/ECE551/Final Project 2/A2D_Intf.sv
+L0 2
+Z4 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1544492376.000000
+!s107 I:/ECE551/Final Project 2/A2D_Intf.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/A2D_Intf.sv|
+!i113 1
+Z5 o-work work -sv
+n@a2@d_@intf
+vADC128S
+R0
+Z6 !s110 1544492377
+!i10b 1
+!s100 lhE^bPB^IlkJ7fo<JUR8`0
+I1MAzYzg6Z<8D8ObNbz8:[2
+R2
+!s105 ADC128S_sv_unit
+S1
+R3
+w1542817513
+8I:/ECE551/Final Project 2/ADC128S.sv
+FI:/ECE551/Final Project 2/ADC128S.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z7 !s108 1544492377.000000
+!s107 I:/ECE551/Final Project 2/ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/ADC128S.sv|
+!i113 1
+R5
+n@a@d@c128@s
+vAuth_blk
+R0
+R6
+!i10b 1
+!s100 8EU7`GIBBEQ<1LTLNTo<C3
+IPoCMf>3EP>2j?N:aVGJG@2
+R2
+!s105 Auth_blk_sv_unit
+S1
+R3
+w1541781831
+8I:/ECE551/Final Project 2/Auth_blk.sv
+FI:/ECE551/Final Project 2/Auth_blk.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R7
+!s107 I:/ECE551/Final Project 2/Auth_blk.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/Auth_blk.sv|
+!i113 1
+R5
+n@auth_blk
+vbalance_cntrl
+R0
+!s110 1544495101
+!i10b 1
+!s100 mZYkCfh`i=e]B_Oa>^>T73
+IiX9KaA=6Y]GgmLD5YzWXk1
+R2
+!s105 balance_cntrl_sv_unit
+S1
+R3
+w1544495097
+8I:/ECE551/Final Project 2/balance_cntrl.sv
+FI:/ECE551/Final Project 2/balance_cntrl.sv
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1544495101.000000
+!s107 I:/ECE551/Final Project 2/balance_cntrl.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/balance_cntrl.sv|
+!i113 1
+R5
+vduty
+!s110 1544492378
+!i10b 1
+!s100 0gHjNmDzafP[Ni2<b4OPX1
+IG1be^i6_gk^S;BTUATW][1
+R2
+R3
+w1538512494
+8I:/ECE551/Final Project 2/duty.v
+FI:/ECE551/Final Project 2/duty.v
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1544492378.000000
+!s107 I:/ECE551/Final Project 2/duty.v|
+!s90 -reportprogress|300|-work|work|-stats=none|I:/ECE551/Final Project 2/duty.v|
+!i113 1
+Z8 o-work work
+vinert_intf
+R0
+!s110 1544492379
+!i10b 1
+!s100 ZZ[No_86Q81G^=3X;TJ0W2
+I>TnCkMNeC^4eMfQCY06Jh1
+R2
+!s105 inert_intf_sv_unit
+S1
+R3
+w1543593296
+8I:/ECE551/Final Project 2/inert_intf.sv
+FI:/ECE551/Final Project 2/inert_intf.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z9 !s108 1544492379.000000
+!s107 I:/ECE551/Final Project 2/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/inert_intf.sv|
+!i113 1
+R5
+vinertial_integrator
+R0
+!s110 1544494371
+!i10b 1
+!s100 QMm@GAVB`6biSk^WA396?2
+Ifo]B:<oWWMYo>ahUD=j7<3
+R2
+!s105 inertial_integrator_sv_unit
+S1
+R3
+w1544494366
+8I:/ECE551/Final Project 2/inertial_integrator.sv
+FI:/ECE551/Final Project 2/inertial_integrator.sv
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1544494371.000000
+!s107 I:/ECE551/Final Project 2/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/inertial_integrator.sv|
+!i113 1
+R5
+vmtr_drv
+R0
+!s110 1544493599
+!i10b 1
+!s100 koNY[hjBMjK77<KaLeC=;3
+ILGh[`b4RWK^Ol5Dl;PRP03
+R2
+!s105 mtr_drv_sv_unit
+S1
+R3
+w1539911372
+8I:/ECE551/Home Work/HW3/mtr_drv.sv
+FI:/ECE551/Home Work/HW3/mtr_drv.sv
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1544493598.000000
+!s107 I:/ECE551/Home Work/HW3/mtr_drv.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Home Work/HW3/mtr_drv.sv|
+!i113 1
+R5
+vpiezo
+R0
+Z10 !s110 1544492380
+!i10b 1
+!s100 3CY>C0lPnnzEe@Y_UkMHR0
+I<UbW[DKPWJHZoUaKDa7g@1
+R2
+!s105 piezo_sv_unit
+S1
+R3
+Z11 w1544475782
+8I:/ECE551/Final Project 2/piezo.sv
+FI:/ECE551/Final Project 2/piezo.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 I:/ECE551/Final Project 2/piezo.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/piezo.sv|
+!i113 1
+R5
+vPiezo_Timer
+R0
+R10
+!i10b 1
+!s100 TO:AEnNdI;h__joX<6[kR1
+IDLd5EO5=da`W:czgK;;3z1
+R2
+!s105 Piezo_Timer_sv_unit
+S1
+R3
+R11
+8I:/ECE551/Final Project 2/Piezo_Timer.sv
+FI:/ECE551/Final Project 2/Piezo_Timer.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z12 !s108 1544492380.000000
+!s107 I:/ECE551/Final Project 2/Piezo_Timer.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/Piezo_Timer.sv|
+!i113 1
+R5
+n@piezo_@timer
+vPWM11
+R0
+R10
+!i10b 1
+!s100 9bJCTb`3PM3RT>[42iN><1
+I2gC@zn1zFT?@Gbdm>I`PH3
+R2
+!s105 PWM11_sv_unit
+S1
+R3
+w1538964135
+8I:/ECE551/Final Project 2/PWM11.sv
+FI:/ECE551/Final Project 2/PWM11.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R12
+!s107 I:/ECE551/Final Project 2/PWM11.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/PWM11.sv|
+!i113 1
+R5
+n@p@w@m11
+vrst_synch
+R0
+!s110 1544492457
+!i10b 1
+!s100 >DRJ4dl5DLOh=AUG<87KL0
+Ii:;2C3ZG2Bm>f3]z<[gON2
+R2
+!s105 rst_synch_sv_unit
+S1
+R3
+w1539008614
+8I:/ECE551/Exercise17/rst_synch.sv
+FI:/ECE551/Exercise17/rst_synch.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1544492457.000000
+!s107 I:/ECE551/Exercise17/rst_synch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Exercise17/rst_synch.sv|
+!i113 1
+R5
+vSegway
+!s110 1544493698
+!i10b 1
+!s100 07kPUnm45J;AWjGMkzV`41
+I=>[^h0iOC]QGXC0IhD_kI2
+R2
+R3
+w1544493690
+8I:/ECE551/Final Project/Try2/SegwayProject-master/Segway.v
+FI:/ECE551/Final Project/Try2/SegwayProject-master/Segway.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1544493698.000000
+!s107 I:/ECE551/Final Project/Try2/SegwayProject-master/Segway.v|
+!s90 -reportprogress|300|-work|work|-stats=none|I:/ECE551/Final Project/Try2/SegwayProject-master/Segway.v|
+!i113 1
+R8
+n@segway
+vSegway_tb
+R0
+!s110 1544494357
+!i10b 1
+!s100 E3]B=hlRQ8aM@]6>2[ElN0
+IiaNgh3`2eZURdS?SZ1W;a2
+R2
+!s105 Segway_tb_sv_unit
+S1
+R3
+w1544494351
+8I:/ECE551/Final Project 2/Segway_tb.sv
+FI:/ECE551/Final Project 2/Segway_tb.sv
+Ftb_tasks.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1544494357.000000
+!s107 tb_tasks.v|I:/ECE551/Final Project 2/Segway_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/Segway_tb.sv|
+!i113 1
+R5
+n@segway_tb
+vSegwayModel
+R0
+!s110 1544492456
+!i10b 1
+!s100 ^XPDXPPC?dhUYVaYWzWc:3
+I_;ZEJ4lKPBBPTdIlE<<l?3
+R2
+!s105 SegwayModel_sv_unit
+S1
+R3
+w1542817510
+8I:/ECE551/Final Project/SegwayModel.sv
+FI:/ECE551/Final Project/SegwayModel.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1544492456.000000
+!s107 I:/ECE551/Final Project/SegwayModel.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project/SegwayModel.sv|
+!i113 1
+R5
+n@segway@model
+vSPI_ADC128S
+R0
+Z13 !s110 1544492382
+!i10b 1
+!s100 ;E62=i88@ghW83DU@9;CK1
+IP2H<;_L5VzVK5_ZYLmSC[0
+R2
+!s105 SPI_ADC128S_sv_unit
+S1
+R3
+w1542817512
+8I:/ECE551/Final Project 2/SPI_ADC128S.sv
+FI:/ECE551/Final Project 2/SPI_ADC128S.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z14 !s108 1544492382.000000
+!s107 I:/ECE551/Final Project 2/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/SPI_ADC128S.sv|
+!i113 1
+R5
+n@s@p@i_@a@d@c128@s
+vSPI_mstr16
+R0
+R13
+!i10b 1
+!s100 ]=4n[K?7d4aIiFjG`LaIF2
+IafZgQPdgnYBo:cA`3[3D62
+R2
+!s105 SPI_mstr16_sv_unit
+S1
+R3
+w1544027320
+8I:/ECE551/Final Project 2/SPI_mstr16.sv
+FI:/ECE551/Final Project 2/SPI_mstr16.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R14
+!s107 I:/ECE551/Final Project 2/SPI_mstr16.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/SPI_mstr16.sv|
+!i113 1
+R5
+n@s@p@i_mstr16
+vsteer_en_SM
+R0
+!s110 1544493383
+!i10b 1
+!s100 ];5KT;[U4@>hc6^LYDMc=2
+I<`@3HVJ8LV;9kjiQefb5i3
+R2
+!s105 steer_en_SM_sv_unit
+S1
+R3
+w1544493378
+8I:/ECE551/Final Project 2/steer_en_SM.sv
+FI:/ECE551/Final Project 2/steer_en_SM.sv
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1544493382.000000
+!s107 I:/ECE551/Final Project 2/steer_en_SM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/steer_en_SM.sv|
+!i113 1
+R5
+nsteer_en_@s@m
+vUART_rcv
+R0
+!s110 1544492384
+!i10b 1
+!s100 ef8C@z5ghUzITC;1LR7>52
+I^_zbG8abY9ibCoA5c?69g0
+R2
+!s105 UART_rcv_sv_unit
+S1
+R3
+w1539958088
+8I:/ECE551/Final Project 2/UART_rcv.sv
+FI:/ECE551/Final Project 2/UART_rcv.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1544492383.000000
+!s107 I:/ECE551/Final Project 2/UART_rcv.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/UART_rcv.sv|
+!i113 1
+R5
+n@u@a@r@t_rcv
+vUART_tx
+R0
+R1
+!i10b 1
+!s100 ME<PgdXm:J@Jn79:PH[Cl1
+IcB2nf`D5oQG=@40nB@JAR2
+R2
+!s105 UART_tx_sv_unit
+S1
+R3
+w1539958060
+8I:/ECE551/Final Project 2/UART_tx.sv
+FI:/ECE551/Final Project 2/UART_tx.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1544492375.000000
+!s107 I:/ECE551/Final Project 2/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|I:/ECE551/Final Project 2/UART_tx.sv|
+!i113 1
+R5
+n@u@a@r@t_tx
