@@ -119,6 +119,15 @@ always
 //`include "tasks.sv"	// perhaps you have a separate included file that has handy tasks.
 // For some reason, these tasks don't run correctly if they're read from a separate file
 task RunFullTest;
+	GetReadyToDrive;
+
+	SetLeanAndDrive(16'h1FFF);
+	SetLeanAndDrive(16'h0000);
+
+	Drive_ZigZag();
+endtask
+
+task GetReadyToDrive;
   begin
 	Initialize();
 
@@ -145,6 +154,9 @@ task RunFullTest;
 	repeat (10000) @(negedge clk);
 
 	CheckSteerEn();
+
+	repeat (100) @(negedge clk);
+
   end
 endtask
 
@@ -162,6 +174,8 @@ task Initialize;
     	RST_n = 0;
     	repeat (2) @(negedge clk);
     	RST_n = 1;
+	$display("Waiting for inertial sensor startup");
+	wait(iDUT.inert_intf_DUT.state == 4'h5);
     	$display("Initialization finished");
   end
 endtask
@@ -218,6 +232,7 @@ task SetLoadCells;
 	@(negedge clk);
 	write = 0;
 	$display("Load cells were set with values: %h and %h", iA2D.lft_ld, iA2D.rght_ld);
+	repeat (500000) @(negedge clk);
   end
 endtask
 
@@ -232,8 +247,8 @@ task CheckSteerEn;
 		$stop();
 	  end
 	  $display("1 check passed");
-	  if (iDUT.steer_en_DUT.sum_gt_min & !iDUT.steer_en_clr_tmr) begin
-	  	$display("ERROR: clr_tmr should be asserted after sum_gt_min becomes true");
+	  if (iDUT.steer_en_DUT.sum_gt_min & iDUT.steer_en_DUT.diff_gt_1_4 & !iDUT.steer_en_clr_tmr) begin
+	    $display("ERROR: clr_tmr should be asserted after sum_gt_min becomes true");
 	  	$stop();
 	  end
 	  $display("2 check passed");
@@ -244,10 +259,10 @@ task CheckSteerEn;
 	  $display("3 check passed");
 	  if (iDUT.steer_en_DUT.diff_gt_1_4 & ~iDUT.steer_en_DUT.diff_gt_15_16 & !iDUT.clr_tmr) begin
 	    $display("ERROR: clr_tmr should be asserted this time");
-	    $stop();
+	    	$stop();
 	  end
 	  $display("4 check passed");
-	  if (iDUT.steer_en_DUT.sum_gt_min & ~iDUT.steer_en_tmr_full & (iDUT.en_steer | iDUT.rider_off)) begin
+	  if (iDUT.steer_en_DUT.state==1 & iDUT.steer_en_DUT.sum_gt_min & ~iDUT.steer_en_tmr_full & (iDUT.en_steer | iDUT.rider_off)) begin
 	    $display("ERROR: no outputs should occur until timer expires");
 		$stop();
 	  end
@@ -280,6 +295,23 @@ task CheckSteerEn;
 	  $display("All steer_en_SM checks passed");
 	  $display("steer_en_SM state = %h, rider_off = %b, en_steer = %b", iDUT.steer_en_DUT.state, iDUT.rider_off, iDUT.en_steer);
 	//end
+  end
+endtask
+
+task SetLeanAndDrive;
+  input reg [15:0] lean;
+  begin
+	@(negedge clk);
+	rider_lean = lean;
+
+	repeat (1000000) @(negedge clk);
+	
+  end
+endtask
+
+task Drive_ZigZag;
+  begin
+	
   end
 endtask
 
