@@ -23,7 +23,7 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   // passed to both balance_cntrl and to steer_en.  Should be set to  //
   // 0 when we map to the DE0-Nano.                                  //
   ////////////////////////////////////////////////////////////////////
-  localparam fast_sim = 1;	// asserted to speed up simulations. 
+  localparam fast_sim = 1'b1;	// asserted to speed up simulations. 
   
   ///////////////////////////////////////////////////////////
   ////// Internal interconnecting sigals defined here //////
@@ -33,6 +33,26 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   // You will need to declare a bunch more interanl signals to hook up everything
   
   ////////////////////////////////////
+
+  localparam BATT_THRESHOLD = 12'h800;
+
+  wire [11:0] lft_ld, rght_ld, batt;
+
+  wire pwr_up;
+
+  wire [15:0] ptch;
+  wire vld;
+
+  wire [10:0] lft_spd, rght_spd;
+  wire lft_rev, rght_rev, too_fast;
+
+  wire rider_off, en_steer, clr_tmr;
+
+  wire batt_low;
+  assign batt_low = batt < BATT_THRESHOLD;
+
+  wire [11:0] load_cell_diff;
+  wire steer_en_tmr_full, steer_en_clr_tmr;
    
   
   ///////////////////////////////////////////////////////
@@ -53,11 +73,104 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   //   A2D_intf
   //   piezo
   //////////////////////////////////////////////////////
-  
+
+  A2D_Intf a2d_intf_DUT(// Inputs
+			.clk(clk),
+			.rst_n(rst_n),
+			.nxt(vld),
+			.MISO(A2D_MISO),
+			// Outputs
+			.lft_ld(lft_ld),
+			.rght_ld(rght_ld),
+			.batt(batt),
+			.SS_n(A2D_SS_n),
+			.SCLK(A2D_SCLK),
+			.MOSI(A2D_MOSI)
+			);
+
+  Auth_blk auth_blk_DUT(// Inputs
+			.clk(clk),
+			.rst_n(rst_n),
+			.RX(RX),
+			.rider_off(rider_off),
+			// Output
+			.pwr_up(pwr_up));
+
+  mtr_drv mtr_drv_DUT(	// Inputs
+			.clk(clk),
+			.rst_n(rst_n),
+			.lft_spd(lft_spd),
+			.rght_spd(rght_spd),
+			.lft_rev(lft_rev),
+			.rght_rev(rght_rev),
+			// Outputs 
+			.PWM_rev_lft(PWM_rev_lft),
+			.PWM_rev_rght(PWM_rev_rght),
+			.PWM_frwrd_lft(PWM_frwrd_lft),
+			.PWM_frwrd_rght(PWM_frwrd_rght)
+		      );
+
+  piezo #(fast_sim)
+	piezo_DUT(	// Inputs
+			.clk(clk),
+			.rst_n(rst_n),
+			.en_steer(en_steer),
+			.ovr_spd(too_fast),
+			.batt_low(batt_low),
+			.steer_en_clr_tmr(steer_en_clr_tmr),
+			// Outputs
+			.piezo(piezo),
+			.piezo_n(piezo_n),
+			.steer_en_tmr_full(steer_en_tmr_full)
+		  );
+
+  inert_intf inert_intf_DUT(	// Inputs
+				.clk(clk),
+				.rst_n(rst_n),
+				.INT(INT),
+				.MISO(INERT_MISO),
+				// Outputs
+				.vld(vld),
+				.ptch(ptch),
+				.SS_n(INERT_SS_n),
+				.SCLK(INERT_SCLK),
+				.MOSI(INERT_MOSI)
+			    );
+
+  balance_cntrl #(fast_sim)
+		balance_ctrl_DUT(// Inputs
+				.clk(clk),
+				.rst_n(rst_n),
+				.pwr_up(pwr_up),
+				.vld(vld),
+				.ptch(ptch),
+				.ld_cell_diff(load_cell_diff),	// need to calculate load difference
+				.rider_off(rider_off),
+				.en_steer(en_steer),
+				// Outputs
+				.lft_spd(lft_spd),
+				.lft_rev(lft_rev),
+				.rght_spd(rght_spd),
+				.rght_rev(rght_rev),
+				.too_fast(too_fast)
+				);
+
+  steer_en_SM steer_en_DUT(	// Inputs
+				.clk(clk),
+				.rst_n(rst_n),
+				.lft_load(lft_ld),
+				.rght_load(rght_ld),
+				.tmr_full(steer_en_tmr_full),
+				// Outputs
+				.en_steer(en_steer),
+				.rider_off(rider_off),
+				.load_cell_diff(load_cell_diff),
+				.clr_tmr(steer_en_clr_tmr)
+			   );
 
   /////////////////////////////////////
   // Instantiate reset synchronizer //
   ///////////////////////////////////  
-  rst_synch iRST(.clk(clk),.RST_n(RST_n),.rst_n(rst_n));
+  rst_synch iRST(.clk(clk), .RST_n(RST_n), .rst_n(rst_n));
   
 endmodule

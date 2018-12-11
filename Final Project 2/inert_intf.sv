@@ -26,9 +26,13 @@ module inert_intf(clk, rst_n, vld, ptch, SS_n, SCLK, MOSI, MISO, INT);
   logic [7:0] rd_data;
   logic wrt, done, vldSM, ptchL_en, ptchH_en, AZL_en, AZH_en;
 
+  wire [15:0] SPI_rd_data;
+
   //instantiate SPI_mstr16
   SPI_mstr16 iSPI(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), 
-                  .MISO(MISO), .wrt(wrt), .cmd(cmd), .done(done), .rd_data(rd_data));
+                  .MISO(MISO), .wrt(wrt), .cmd(cmd), .done(done), .rd_data(SPI_rd_data));
+
+  assign rd_data = SPI_rd_data[7:0];
 
   //instantiate inertial_integrator
   inertial_integrator iINT(.clk(clk), .rst_n(rst_n), .vld(vld), .ptch_rt(ptch_rt), .AZ(AZ), .ptch(ptch));

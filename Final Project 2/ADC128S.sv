@@ -18,6 +18,7 @@ module ADC128S(clk,rst_n,SS_n,SCLK,MISO,MOSI);
   
   wire [15:0] A2D_data,cmd;
   wire rdy_rise;
+  wire rdy;
 	
   typedef enum reg {FIRST,SECOND} state_t;
   

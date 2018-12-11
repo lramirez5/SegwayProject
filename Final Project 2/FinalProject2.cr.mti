@@ -56,13 +56,6 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	Auth_blk
 
-} {} {}} {I:/ECE551/Final Project 2/inert_intf.sv} {1 {vlog -work work -sv -stats=none {I:/ECE551/Final Project 2/inert_intf.sv}
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module inert_intf
-
-Top level modules:
-	inert_intf
-
 } {} {}} {I:/ECE551/Final Project 2/Segway_tb.sv} {1 {vlog -work work -sv -stats=none {I:/ECE551/Final Project 2/Segway_tb.sv}
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module Segway_tb
@@ -84,13 +77,6 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	PWM11
 
-} {} {}} {I:/ECE551/Final Project 2/UART_tx.sv} {1 {vlog -work work -sv -stats=none {I:/ECE551/Final Project 2/UART_tx.sv}
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module UART_tx
-
-Top level modules:
-	UART_tx
-
 } {} {}} {I:/ECE551/Final Project 2/A2D_Intf.sv} {1 {vlog -work work -sv -stats=none {I:/ECE551/Final Project 2/A2D_Intf.sv}
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module A2D_Intf
@@ -98,12 +84,26 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	A2D_Intf
 
+} {} {}} {I:/ECE551/Final Project 2/UART_tx.sv} {1 {vlog -work work -sv -stats=none {I:/ECE551/Final Project 2/UART_tx.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
+
 } {} {}} {I:/ECE551/Final Project 2/piezo.sv} {1 {vlog -work work -sv -stats=none {I:/ECE551/Final Project 2/piezo.sv}
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module piezo
 
 Top level modules:
 	piezo
+
+} {} {}} {I:/ECE551/Final Project 2/balance_cntrl.sv} {1 {vlog -work work -sv -stats=none {I:/ECE551/Final Project 2/balance_cntrl.sv}
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module balance_cntrl
+
+Top level modules:
+	balance_cntrl
 
 } {} {}} {I:/ECE551/Final Project 2/tb_tasks.v} {0 {vlog -work work -stats=none {I:/ECE551/Final Project 2/tb_tasks.v}
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015

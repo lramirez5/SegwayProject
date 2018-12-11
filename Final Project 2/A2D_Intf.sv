@@ -32,31 +32,43 @@ module A2D_Intf(clk, rst_n, nxt, lft_ld, rght_ld, batt, SS_n, SCLK, MOSI, MISO);
       RRcounter <= RRcounter + 1;
 
   //left load flop
-  always_ff@(posedge clk)
-    if(en_lft)
+  always_ff@(posedge clk, negedge rst_n)
+    if(!rst_n)
+      lft_ld <= 12'h000;
+    else if(en_lft)
       lft_ld <= rd_data;
 
   //right load flop
-  always_ff@(posedge clk)
-    if(en_rght)
+  always_ff@(posedge clk, negedge rst_n)
+    if(!rst_n)
+      rght_ld <= 12'h000;
+    else if(en_rght)
       rght_ld <= rd_data;
 
   //battery flop
-  always_ff@(posedge clk)
-    if(en_batt)
+  always_ff@(posedge clk, negedge rst_n)
+    if(!rst_n)
+      batt <= 12'h000;
+    else if(en_batt)
       batt <= rd_data;
 
   //logic block to decide which enable is active
   always@(update) begin
     if(RRcounter == 2'b00 && update) begin
       en_lft = 1;
+      en_rght = 0;
+      en_batt = 0;
       cmd = {2'b00, 3'b100, 11'h000};
     end
     else if(RRcounter == 2'b01 && update) begin
+      en_lft = 0;
       en_rght = 1;
+      en_batt = 0;
       cmd = {2'b00, 3'b101, 11'h000};
     end
     else if(RRcounter == 2'b10 && update) begin
+      en_lft = 0;
+      en_rght = 0;
       en_batt = 1;
       cmd = {2'b00, 3'b000, 11'h000};
     end
@@ -108,12 +120,12 @@ module A2D_Intf(clk, rst_n, nxt, lft_ld, rght_ld, batt, SS_n, SCLK, MOSI, MISO);
 	else
 	  nxt_state = TRNS2;
 
-      default:
+      /*default:
       begin
 	wrt = 0;
 	update = 0;
 	nxt_state = IDLE;
-      end
+      end*/
 
     endcase
   end
