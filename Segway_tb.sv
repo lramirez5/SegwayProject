@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module Segway_tb();
 			
 //// Interconnects to DUT/support defined as type wire /////
@@ -68,22 +69,20 @@ initial begin
   rider_lean = 16'h1FFF;
   
   //ewpwRCRO
-  repeat(1000000) @(negedge clk);
+  repeat(2000000) @(negedge clk);
 
   rider_lean = 16'h0000;
 	
-  repeat(100) @(negedge clk);
+  repeat(2000000) @(negedge clk);
   
-  send_cmd = 1'b0;
-  
-  cmd = 8'h00;
+  SendCmd(8'h00);
 
-  repeat(100)
-  @(posedge clk);
-  rider_lean = 16'h001;
+  repeat(100) @(posedge clk);
+  rider_lean = 16'h001; 
+  
 
   //Checked at this point power should be up.
-  //$stop;
+  $stop;
   
   repeat(200)@(negedge clk);
   SendCmd (8'h73);
@@ -92,11 +91,6 @@ initial begin
   
   
   //check if auth blk is in pwr2 state
-  
-  repeat (100) 
-  #10 rider_lean = rider_lean +1;
-  repeat(1000000)@(negedge clk);
-  rider_lean = 16'h0;
   $stop; 
   
   
