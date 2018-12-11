@@ -3,7 +3,7 @@
 // Version   : N-2017.09-SP5
 // Date      : Mon Dec 10 23:16:16 2018
 /////////////////////////////////////////////////////////////
-
+`timescale 1ns/1ps
 
 module Segway ( clk, RST_n, LED, INERT_SS_n, INERT_MOSI, INERT_SCLK, 
         INERT_MISO, A2D_SS_n, A2D_MOSI, A2D_SCLK, A2D_MISO, PWM_rev_rght, 

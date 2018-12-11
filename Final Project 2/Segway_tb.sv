@@ -1,5 +1,6 @@
+`timescale 1ns/1ps	
 module Segway_tb();
-			
+		
 //// Interconnects to DUT/support defined as type wire /////
 wire SS_n,SCLK,MOSI,MISO,INT;				// to inertial sensor
 wire A2D_SS_n,A2D_SCLK,A2D_MOSI,A2D_MISO;	// to A2D converter
@@ -11,7 +12,7 @@ wire piezo,piezo_n;
 reg clk, RST_n;
 reg [7:0] cmd;					// command host is sending to DUT
 reg send_cmd;					// asserted to initiate sending of command
-reg signed [13:0] rider_lean;	// forward/backward lean (goes to SegwayModel)
+reg signed [15:0] rider_lean;	// forward/backward lean (goes to SegwayModel)
 // Perhaps more needed?
 
 
@@ -65,19 +66,19 @@ initial begin
  
   SendCmd(8'h67);	// perhaps you have a task that sends 'g' 
  
-  rider_lean = 14'h1FFF;
+  rider_lean = 16'h1FFF;
   
   //ewpwRCRO
-  repeat(2000000) @(negedge clk);
+  repeat(1000000) @(negedge clk);
 
-  rider_lean = 14'h0000;
+  rider_lean = 16'h0000;
 	
-  repeat(2000000) @(negedge clk);
+  repeat(500000) @(negedge clk);
   
   SendCmd(8'h00);
 
   repeat(100) @(posedge clk);
-  rider_lean = 14'h001; 
+  rider_lean = 16'h001; 
   
 
   //Checked at this point power should be up.
