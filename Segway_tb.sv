@@ -123,15 +123,16 @@ task RunFullTest;
 
 	SetLeanAndDrive(16'h1FFF, 32'd1000000);
 	SetLeanAndDrive(16'h0000, 32'd1000000);
-
+	CheckShutDown();
 	Drive_ZigZag();
+	
 endtask
 
 task GetReadyToDrive;
   begin
 	Initialize();
 
-	@(negedge clk);
+	repeat (100) @(negedge clk);
 
 	SendCmd_g();
 
@@ -139,23 +140,24 @@ task GetReadyToDrive;
 
 	SendCmd_g();
 
-	//repeat (100) @(negedge clk);
+	repeat (100) @(negedge clk);
 
 	SetLoadCells(12'h400, 12'h000);
 
-	//repeat (10000) @(negedge clk);
-
-	CheckSteerEn();
-
-	//repeat (100) @(negedge clk);
-
-	SetLoadCells(12'h400, 12'h400);
-
-	//repeat (10000) @(negedge clk);
+	repeat (10000) @(negedge clk);
 
 	CheckSteerEn();
 
 	repeat (100) @(negedge clk);
+
+	SetLoadCells(12'h400, 12'h400);
+
+	repeat (10000) @(negedge clk);
+
+	CheckSteerEn();
+
+	repeat (100) @(negedge clk);
+	
 
   end
 endtask
@@ -312,10 +314,94 @@ task SetLeanAndDrive;
   end
 endtask
 
+task CheckShutDown;
+	begin
+	$display("start test shut down");
+	SetLeanAndDrive(16'h1FFF, 32'd1000000);
+	SendCmd_s();
+	if (!iDUT.steer_en_DUT.en_steer)begin
+	$display("en_steer should be high"); end
+	SetLoadCells (12'h000, 12'h000);
+	$display("Finish test shut down");
+	if (iDUT.steer_en_DUT.en_steer)begin
+	$display("en_steer should be low"); end
+	$stop();
+	end 
+endtask 
+
 task Drive_ZigZag;
+  
   begin
+	SetLoadCells (12'h250, 12'h300);
+	if (iDUT.mtr_drv_DUT.lft_spd < iDUT.mtr_drv_DUT.rght_spd) begin 
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 1 failed: Rght Speed should be greater than left speed");
+	  $stop;
+	end 
+	else begin
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 1 passed");end
+	repeat (1000) @(negedge clk);
+
+	SetLoadCells (12'h200, 12'h020);
+	if (iDUT.mtr_drv_DUT.lft_spd > iDUT.mtr_drv_DUT.rght_spd) begin 
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 2 failed: Rght Speed should be less than left speed");
+	  $stop;
+	end 
+	else begin
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 2 passed");end
+	repeat (1000) @(negedge clk);
+
+	SetLoadCells (12'h500, 12'h002);
+	if (iDUT.mtr_drv_DUT.lft_spd > iDUT.mtr_drv_DUT.rght_spd) begin 
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 3 failed: Rght Speed should be less than left speed");
+	  $stop;
+	end 
+	else begin
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 3 passed");end
+	repeat (1000) @(negedge clk);
+
+	SetLoadCells (12'h003, 12'h5FF);
+	if (iDUT.mtr_drv_DUT.lft_spd < iDUT.mtr_drv_DUT.rght_spd) begin 
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 4 failed: Rght Speed should be greater than left speed");
+	  $stop;
+	end 
+	else begin
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 4 passed");end
+	repeat (1000) @(negedge clk);
+	SetLoadCells (12'h000, 12'h000);
+repeat (100000) @(negedge clk);
+	if ((iDUT.mtr_drv_DUT.lft_spd != 0) || (0!=iDUT.mtr_drv_DUT.rght_spd)) begin 
+	  $display("Drive_ZigZag test step off failed: Rght Speed and left speed should be zero");
+	  $stop;
+	end 
+	else begin
+	  $display("Drive_ZigZag test step off passed");end
+	SetLoadCells (12'h200, 12'h200);
 	
+	if (iDUT.mtr_drv_DUT.lft_spd ==iDUT.mtr_drv_DUT.rght_spd) begin 
+	  $display("Left: %h and right: %h", iDUT.mtr_drv_DUT.lft_spd, iDUT.mtr_drv_DUT.rght_spd);
+	  $display("Drive_ZigZag test 5 failed: Rght Speed should be same as left speed");
+	  
+	  $stop;
+	end 
+	else begin
+	  $display("Drive_ZigZag test 5 passed");end
+	SetLoadCells (12'h000, 12'h000);
+	if ((iDUT.mtr_drv_DUT.lft_spd != 0) || (0!=iDUT.mtr_drv_DUT.rght_spd)) begin 
+	  $display("Drive_ZigZag test step off failed: Rght Speed and left speed should be zero");
+	  $stop;
+	end 
+	else begin
+	  $display("Drive_ZigZag test step off passed");end
   end
 endtask
+
 
 endmodule	
