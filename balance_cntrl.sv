@@ -26,12 +26,12 @@ module balance_cntrl(clk, rst_n, vld, pwr_up, ptch, ld_cell_diff, rider_off, en_
   // Define needed internal signals below //
   /////////////////////////////////////////
 	wire signed [9:0] ptch_err_sat, ptch_D_diff;
-	wire signed [14:0] ptch_P_term;
+	reg signed [14:0] ptch_P_term;
 	wire signed [17:0] next_integrator;
 	wire ov, lft_torque_sel, rght_torque_sel;
 	wire signed [11:0] integrator;
 	wire signed [6:0] ptch_D_diff_sat;
-	wire signed [12:0] ptch_D_term;
+	reg signed [12:0] ptch_D_term;
 
 	wire signed [15:0] 	PID_cntrl,
 				lft_torque, rght_torque,
@@ -86,7 +86,20 @@ module balance_cntrl(clk, rst_n, vld, pwr_up, ptch, ld_cell_diff, rider_off, en_
 	assign ptch_D_diff_sat = ptch_D_diff[9] ? &ptch_D_diff[8:6] ? ptch_D_diff[6:0] : 7'h40 :
 					|ptch_D_diff[8:6] ? 10'h3F : ptch_D_diff[6:0];
 	assign ptch_D_term = ptch_D_diff_sat * ($signed(D_COEFF));
-
+	
+	//////////FLOPS//////////////////
+	//always_ff@(posedge clk,negedge rst_n)
+		//if (!rst_n)
+			//ptch_P_term <= 0;
+		//else
+		//ptch_P_term <= ptch_err_sat * ($signed(P_COEFF));
+	//always_ff@(posedge clk,negedge rst_n)
+		//if (!rst_n)
+			//ptch_D_term <= 0;
+		//else
+		//ptch_D_term <= ptch_D_diff_sat * ($signed(D_COEFF));
+		
+	
 
 	assign PID_cntrl = {ptch_P_term[14], ptch_P_term} + {{4{integrator[11]}}, integrator} + {{3{ptch_D_term[12]}}, ptch_D_term};
 
@@ -109,11 +122,29 @@ module balance_cntrl(clk, rst_n, vld, pwr_up, ptch, ld_cell_diff, rider_off, en_
 	assign lft_shaped = lft_torque_sel ? lft_torque_adjusted : lft_torque_mult;
 	assign rght_shaped = rght_torque_sel ? rght_torque_adjusted : rght_torque_mult;
 
-	assign lft_rev = lft_shaped[15];
-	assign rght_rev = rght_shaped[15];
+	///////////FLOPS//////////////////
+	reg signed [15:0] lft_shaped_f, rght_shaped_f;
+	reg lft_rev_f, rght_rev_f;
+	always_ff@(posedge clk,negedge rst_n)
+		if (!rst_n)
+			lft_shaped_f <= 0;
+		else 
+		begin 
+		lft_rev_f <= lft_shaped[15];
+		lft_shaped_f <= lft_shaped; end 
+	always_ff@(posedge clk,negedge rst_n)
+		if (!rst_n)
+			rght_shaped_f <= 0;
+		else 
+		begin 
+		rght_rev_f <= rght_shaped[15];
+		rght_shaped_f <= rght_shaped; end
+	
+	assign lft_rev = lft_rev_f;
+	assign rght_rev = rght_rev_f;
 
-	assign lft_speed_presat = lft_rev ? (~lft_shaped + 1) : lft_shaped;
-	assign rght_speed_presat = rght_rev ? (~rght_shaped + 1) : rght_shaped;
+	assign lft_speed_presat = lft_rev ? (~lft_shaped_f + 1) : lft_shaped_f;
+	assign rght_speed_presat = rght_rev ? (~rght_shaped_f + 1) : rght_shaped_f;
 
 
 	assign lft_spd = pwr_up ? 
