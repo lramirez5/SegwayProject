@@ -43,6 +43,8 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   wire [15:0] ptch;
   wire vld;
 
+  assign LED = ptch[15:8];
+	
   wire [10:0] lft_spd, rght_spd;
   wire lft_rev, rght_rev, too_fast;
 
