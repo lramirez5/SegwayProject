@@ -4,9 +4,8 @@
 #read in files
 #FIXME figure out which blocks to add
 read_file -format sverilog {./Auth_blk.sv ./UART_rcv.sv ./piezo.sv ./SPI_mstr16.sv \
-./A2D_Intf.sv ./ADC128S.sv ./SPI_ADC128S.sv ./inert_intf.sv ./inertial_integrator.sv \
-./balance_cntrl.sv ./mtr_drv.sv ./PWM11.sv ./rst_synch.sv ./steer_en_SM.sv ./Piezo_Timer.sv \
-./UART_tx.sv ./Segway.v }
+./A2D_Intf.sv ./inert_intf.sv ./inertial_integrator.sv ./balance_cntrl.sv ./mtr_drv.sv \
+./PWM11.sv ./rst_synch.sv ./steer_en_SM.sv ./Piezo_Timer.sv ./Segway.v }
 set current_design Segway
 
 #define clock (400MHz) and perform set_dont_touch_network on it
