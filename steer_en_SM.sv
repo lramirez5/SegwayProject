@@ -47,16 +47,16 @@ module steer_en_SM(clk, rst_n, lft_load, rght_load, tmr_full, en_steer, rider_of
   logic diff_gt_15_16;			// asserted if load cell difference is great (rider stepping off)
   logic [12:0] load_cell_sum;		// sum of left and right load cells
   logic signed [11:0] signed_load_cell_diff;
-  output [11:0] load_cell_diff;   // difference between left and right load cells
+  output signed [11:0] load_cell_diff;   // difference between left and right load cells
   
 
   assign load_cell_sum = lft_load + rght_load;
   assign sum_gt_min = load_cell_sum > (MIN_RIDER_WEIGHT + HYSTERESIS);
   assign sum_lt_min = load_cell_sum < (MIN_RIDER_WEIGHT - HYSTERESIS);
-  assign signed_load_cell_diff = lft_load - rght_load;
-  assign load_cell_diff = signed_load_cell_diff[11] ? (~signed_load_cell_diff + 1) : signed_load_cell_diff;
-  assign diff_gt_1_4 = load_cell_diff > (load_cell_sum>>2);
-  assign diff_gt_15_16 = load_cell_diff > ((load_cell_sum>>4) * 15);
+  assign load_cell_diff = $signed(lft_load - rght_load);
+  //assign load_cell_diff = signed_load_cell_diff[11] ? (~signed_load_cell_diff + 1) : signed_load_cell_diff;
+  assign diff_gt_1_4 = $unsigned(load_cell_diff) > (load_cell_sum>>2);
+  assign diff_gt_15_16 = $unsigned(load_cell_diff) > ((load_cell_sum>>4) * 15);
 
   //flop for state machine
   always_ff@(posedge clk, negedge rst_n)

@@ -115,8 +115,8 @@ module balance_cntrl(clk,rst_n,pwr_up,vld,ptch,ld_cell_diff,lft_spd,lft_rev,
   assign rght_torque_abs = rght_torque[15] ? $unsigned((~rght_torque + 1)) : $unsigned(rght_torque);
   assign lft_mag_comp = lft_torque_abs >= LOW_TORQUE_BAND;
   assign rght_mag_comp = rght_torque_abs >= LOW_TORQUE_BAND;
-  assign lft_torque_gain = $signed({lft_torque, 4'h0}) - $signed(lft_torque);//lft_torque * $signed(GAIN_MULTIPLIER);
-  assign rght_torque_gain = $signed({rght_torque, 4'h0}) - $signed(rght_torque);//rght_torque * $signed(GAIN_MULTIPLIER);
+  assign lft_torque_gain = lft_torque * $signed(GAIN_MULTIPLIER);
+  assign rght_torque_gain = rght_torque * $signed(GAIN_MULTIPLIER);
 
   //if negative subtract min duty, if positive add it
   assign lft_torque_cyc = lft_torque[15] ? $signed((lft_torque - MIN_DUTY)) : $signed((lft_torque + MIN_DUTY));
