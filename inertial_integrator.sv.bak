@@ -19,7 +19,7 @@ module inertial_integrator(clk, rst_n, vld, ptch_rt, AZ, ptch);
   assign ptch_rt_comp = ptch_rt - PTCH_RT_OFFSET;
   assign AZ_comp = AZ - AZ_OFFSET;
 
-  assign ptch_acc_product = $signed(AZ_comp) + $signed({AZ_comp, 8'h00}) + $signed({AZ_comp, 6'h00}) + $signed({AZ_comp, 2'b00}) + $signed({AZ_comp, 1'b0});//* $signed(327);  // 327 is fudge factor
+  assign ptch_acc_product = $signed(AZ_comp) + $signed({AZ_comp, 8'h00} + $signed({AZ_comp, 6'h00}) + $signed({AZ_comp, 2'b00}) + signed({AZ_comp, 1'b0});//* $signed(327);  // 327 is fudge factor
 
   assign ptch = $signed(ptch_int[26:11]);  //assign ptch a scaled version of ptch_int 
 
