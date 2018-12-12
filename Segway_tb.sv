@@ -121,8 +121,8 @@ always
 task RunFullTest;
 	GetReadyToDrive;
 
-	SetLeanAndDrive(16'h1FFF);
-	SetLeanAndDrive(16'h0000);
+	SetLeanAndDrive(16'h1FFF, 32'd1000000);
+	SetLeanAndDrive(16'h0000, 32'd1000000);
 
 	Drive_ZigZag();
 endtask
@@ -131,7 +131,7 @@ task GetReadyToDrive;
   begin
 	Initialize();
 
-	repeat (100) @(negedge clk);
+	@(negedge clk);
 
 	SendCmd_g();
 
@@ -139,19 +139,19 @@ task GetReadyToDrive;
 
 	SendCmd_g();
 
-	repeat (100) @(negedge clk);
+	//repeat (100) @(negedge clk);
 
 	SetLoadCells(12'h400, 12'h000);
 
-	repeat (10000) @(negedge clk);
+	//repeat (10000) @(negedge clk);
 
 	CheckSteerEn();
 
-	repeat (100) @(negedge clk);
+	//repeat (100) @(negedge clk);
 
 	SetLoadCells(12'h400, 12'h400);
 
-	repeat (10000) @(negedge clk);
+	//repeat (10000) @(negedge clk);
 
 	CheckSteerEn();
 
@@ -300,12 +300,15 @@ endtask
 
 task SetLeanAndDrive;
   input reg [15:0] lean;
+  input reg [31:0] cycles;
   begin
 	@(negedge clk);
 	rider_lean = lean;
 
-	repeat (1000000) @(negedge clk);
-	
+	while (cycles != 0) begin
+		cycles = cycles - 1;
+		@(negedge clk);
+	end
   end
 endtask
 
